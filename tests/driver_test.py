@@ -1,6 +1,6 @@
 import unittest
-from models.drivers import Driver
-from models.constructors import Constructor
+from models.driver import Driver
+from models.constructor import Constructor
 
 class TestDriver(unittest.TestCase):
 
