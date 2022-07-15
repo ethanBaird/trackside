@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    Form to add will go here
+
+    <form action="/drivers/new" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+
+        <label for="points">Points:</label>
+        <input type="text" name="points" id="points">
+
+        <label for="wins">Wins:</label>
+        <input type="text" name="wins" id="wins">
+
+        <label for="podiums">Podiums:</label>
+        <input type="text" name="podiums" id="podiums">
+
+        <button type="submit">Add Driver</button>
+    </form>
+{% endblock content %}

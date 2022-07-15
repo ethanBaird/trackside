@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Drivers</h2>
+    <hr>
+    <ul>
+        {% for driver in drivers %}
+            <li><a href="/drivers/{{driver.id}}">{{ driver.name }}</a>: <b>{{ driver.points }}pts</b></li>
+        {% endfor %}
+    </ul>
+    <form action="/drivers/new">
+        <button type="submit">New Driver</button>
+    </form>
+    
+{% endblock content %}

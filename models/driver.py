@@ -10,8 +10,6 @@ class Driver:
     def add_points(self, points, constructor):
         self.points += points
         constructor.points += points
-    
-
 
     def add_wins(self, wins):
         self.wins += wins
