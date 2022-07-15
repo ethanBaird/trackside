@@ -2,4 +2,8 @@
 
 {% block content %}
     {{ driver.name }} {{ driver.points }} {{ driver.wins }} {{ driver.podiums }}
+
+    <form action="/drivers/{{driver.id}}/edit">
+        <button type="submit">Edit</button>
+    </form>
 {% endblock content %}

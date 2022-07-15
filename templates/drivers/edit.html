@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/drivers/{{driver.id}}/edit" method="post">
+        <label for="name">Name:</label>
+        <input value="{{driver.name}}" type="text" name="name" id="name">
+
+        <label for="points">Points:</label>
+        <input value="{{driver.points}}" type="text" name="points" id="points">
+
+        <label for="wins">Wins:</label>
+        <input value="{{driver.wins}}" type="text" name="wins" id="wins">
+
+        <label for="podiums">Podiums:</label>
+        <input value="{{driver.podiums}}" type="text" name="podiums" id="podiums">
+
+        <button type="submit">Edit Driver</button>
+    </form>
+{% endblock content %}
