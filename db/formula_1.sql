@@ -7,7 +7,9 @@ DROP TABLE IF EXISTS scores;
 CREATE TABLE scores (
     id  SERIAL PRIMARY KEY,
     position INT,
-    points INT
+    points INT,
+    win BOOLEAN,
+    podium BOOLEAN
 );
 
 CREATE TABLE races (
@@ -24,22 +26,19 @@ CREATE TABLE drivers (
     podiums INT
 );
 
-CREATE TABLE constructors(
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
-    driver1_id INT NOT NULL REFERENCES drivers(id),
-    driver2_id INT NOT NULL REFERENCES drivers(id),
-    points INT
-);
+-- CREATE TABLE constructors(
+--     id SERIAL PRIMARY KEY,
+--     name VARCHAR(255),
+--     driver1_id INT NOT NULL REFERENCES drivers(id),
+--     driver2_id INT NOT NULL REFERENCES drivers(id),
+--     points INT
+-- );
 
 CREATE TABLE results(
     id SERIAL PRIMARY KEY,
-    position INT,
-    win BOOLEAN,
-    podium BOOLEAN,
     score_id INT NOT NULL REFERENCES scores(id), 
     driver_id INT NOT NULL REFERENCES drivers(id), 
-    constructor_id INT NOT NULL REFERENCES constructors(id), 
+    constructor VARCHAR(255), 
     race_id INT NOT NULL REFERENCES races(id) 
 );
 
