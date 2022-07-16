@@ -1,0 +1,12 @@
+header {
+    background-color: red;
+    display: flex;
+}
+
+main {
+    display: flex;
+}
+
+nav {
+    width: 25%
+}
