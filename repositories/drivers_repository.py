@@ -48,6 +48,14 @@ def update(driver):
     values = [driver.name, driver.points, driver.wins, driver.podiums, driver.id]
     run_sql(sql, values)
 
+def delete(id):
+    sql = """
+        DELETE FROM drivers
+        WHERE id = %s
+    """
+    values = [id]
+    run_sql(sql, values)
+
 
 def delete_all():
     sql = """

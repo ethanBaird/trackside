@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Races</h2>
+    <hr>
+    <ul>
+        {% for race in races %}
+            <li><a href="/races/{{race.id}}">{{ race.location }}</a></b></li>
+            <form action="/races/{{race.id}}/delete" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        {% endfor %}
+    </ul>
+    <form action="/races/new">
+        <button type="submit">New Race</button>
+    </form>
+    
+    
+{% endblock content %}

@@ -51,3 +51,7 @@ def update(id):
     return redirect('/drivers')
 
 # delete 'drivers/<id>/delete
+@drivers_blueprint.route('/drivers/<id>/delete', methods=['POST'])
+def delete(id):
+    drivers_repository.delete(id)
+    return redirect('/drivers')

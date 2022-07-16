@@ -12,7 +12,8 @@ CREATE TABLE scores (
 
 CREATE TABLE races (
     id SERIAL PRIMARY KEY,
-    location VARCHAR(255)
+    location VARCHAR(255),
+    circuit VARCHAR(255)
 );
 
 CREATE TABLE drivers (

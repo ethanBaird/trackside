@@ -6,10 +6,14 @@
     <ul>
         {% for driver in drivers %}
             <li><a href="/drivers/{{driver.id}}">{{ driver.name }}</a>: <b>{{ driver.points }}pts</b></li>
+            <form action="/drivers/{{driver.id}}/delete" method="post">
+                <button type="submit">Delete</button>
+            </form>
         {% endfor %}
     </ul>
     <form action="/drivers/new">
         <button type="submit">New Driver</button>
     </form>
+    
     
 {% endblock content %}

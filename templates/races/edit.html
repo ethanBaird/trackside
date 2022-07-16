@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/races/{{race.id}}/edit" method="post">
+        <label for="location">Location:</label>
+        <input value="{{race.location}}" type="text" name="location" id="location">
+
+        <label for="circuit">Circuit:</label>
+        <input value="{{race.circuit}}" type="text" name="circuit" id="circuit">
+
+        <button type="submit">Edit Race</button>
+    </form>
+{% endblock content %}

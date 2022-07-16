@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{ race.location }} {{ race.circuit }}
+
+    <form action="/races/{{race.id}}/edit">
+        <button type="submit">Edit</button>
+    </form>
+    <form action="/races/{{race.id}}/delete" method="post">
+        <button type="submit">Delete</button>
+    </form>
+{% endblock content %}

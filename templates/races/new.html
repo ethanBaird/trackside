@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/races/new" method="post">
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location">
+
+        <label for="circuit">Circuit:</label>
+        <input type="text" name="circuit" id="circuit">
+
+        <button type="submit">Add Race</button>
+    </form>
+{% endblock content %}
