@@ -13,23 +13,47 @@ races_repository.delete_all()
 results_repository.delete_all()
 scores_repository.delete_all()
 
-driver1 = Driver("Charles Leclerc", 100, 6, 10)
-driver_repository.save(driver1)
+score1 = Score(1, 25, True, True)
+scores_repository.save(score1)
+score2 = Score(2, 19, False, True)
+scores_repository.save(score2)
+score3 = Score(3, 15, False, True)
+scores_repository.save(score1)
+score4 = Score(2, 12, False, False)
+scores_repository.save(score2)
+score5 = Score(1, 10, False, False)
+scores_repository.save(score1)
+score6 = Score(2, 8, False, False)
+scores_repository.save(score2)
+score7 = Score(1, 6, False, False)
+scores_repository.save(score1)
+score8 = Score(2, 4, False, False)
+scores_repository.save(score2)
+score9 = Score(1, 2, False, False)
+scores_repository.save(score1)
+score10 = Score(2, 1, False, False)
+scores_repository.save(score2)
 
-driver2 = Driver("Carlos Sainz", 92, 1, 7)
+driver1 = Driver("Charles Leclerc", 0, 0, 0)
+driver_repository.save(driver1)
+driver2 = Driver("Carlos Sainz", 0, 0, 0)
 driver_repository.save(driver2)
 
 race1 = Race('Abu Dhabi', 'Yas Marina')
 races_repository.save(race1)
-race2 = Race('Bahrain', 'Bahrain International Circuit')
-races_repository.save(race2)
-
-score1 = Score(1, 25, True, True)
-breakpoint()
-scores_repository.save(score1)
-
 result1 = Result(score1.id, driver1.id, 'Ferarri', race1.id)
 results_repository.save(result1)
+result2 = Result(score2.id, driver2.id, 'Ferarri', race1.id)
+results_repository.save(result2)
+
+
+race2 = Race('Bahrain', 'Bahrain International Circuit')
+races_repository.save(race2)
+result1 = Result(score1.id, driver1.id, 'Ferarri', race1.id)
+results_repository.save(result1)
+result2 = Result(score2.id, driver2.id, 'Ferarri', race1.id)
+results_repository.save(result2)
+
 
 
 

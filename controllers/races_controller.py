@@ -52,3 +52,4 @@ def update(id):
 def delete(id):
     races_repository.delete(id)
     return redirect('/races')
+

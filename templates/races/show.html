@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ race.location }} {{ race.circuit }}
+    <a href="/races/results/{{race.id}}">{{ race.location }}</a> {{ race.circuit }}
 
     <form action="/races/{{race.id}}/edit">
         <button type="submit">Edit</button>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    {% for result in results %}
+        <li>
+            P{{ result.score.position }}: {{ result.driver.name }} {{ result.score.points }}pts
+        </li>
+    {% endfor %}
+</ul>    
+
+{% endblock content %}
