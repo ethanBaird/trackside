@@ -3,6 +3,21 @@ body {
     margin: 0;
 }
 
+button {
+    font-family: 'Jost', sans-serif;
+    color: #2D2D2A;
+}
+
+select {
+    font-family: 'Jost', sans-serif;
+    color: #2D2D2A;
+}
+
+option {
+    font-family: 'Jost', sans-serif;
+    color: #2D2D2A;
+}
+
 header {
     background-color: #FB3640;
     color: #FFF;
@@ -46,17 +61,18 @@ article h2 {
     margin-top: 0;
 }
 
-article ul {
+.drivers-list ul {
     display: flex;
     flex-direction: column;
     color: #fff
 }
 
-article li {
+.drivers-list li {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
     background-color: #7C809B;
+    color: #fff;
     border: 1px solid #FB3640;
     border-radius: 5px;
     padding: 0px 16px;
@@ -81,7 +97,6 @@ article a:hover {
     width: 225px;
     border-radius: 5px 10px;
 }
-
 
 
 footer {

@@ -1,16 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>{{ driver.name }} - {{ driver.constructor }}</h2>
-<hr>
+<div class="driver-profile">
+    <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
+    <hr>
+    
+    <h3>Stats</h3>  
+    <ul>
+        <li>Points: {{ driver.points }}</li>
+        <li>  Wins: {{ driver.wins }} </li>
+        <li>  Podiums: {{ driver.podiums }}</li>
+    </ul> 
+    <hr>
+</div>
 
-<h3>Stats</h3>  
-<ul>
-    <li>Points: {{ driver.points }}</li>
-    <li>  Wins: {{ driver.wins }} </li>
-    <li>  Podiums: {{ driver.podiums }}</li>
-</ul> 
-<hr>
 <h3>Results</h3>
 <table>
 <tr>
