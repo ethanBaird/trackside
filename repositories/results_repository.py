@@ -17,6 +17,12 @@ def save(result):
     results = run_sql(sql, values)
     id = results[0]["id"]
     result.id = id
+    # adds result to driver
+    driver = drivers_repository.select(result.driver.id)
+    driver.race(result)
+    # saves change to db
+    drivers_repository.update(driver)
+
 
 def select_all():
     race_results = []

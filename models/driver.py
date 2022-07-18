@@ -7,14 +7,11 @@ class Driver:
         self.podiums = _podiums
         self.id = _id
 
-    def add_points(self, points, constructor):
-        self.points += points
-        constructor.points += points
-
-    def add_wins(self, wins):
-        self.wins += wins
-
-    def add_podiums(self, podiums):
-        self.podiums += podiums
+    def race(self, result):
+        self.points += result.score.points
+        if result.score.win:
+            self.wins += 1
+        if result.score.podium:
+            self.podiums += 1
 
     

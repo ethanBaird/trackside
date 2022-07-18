@@ -34,9 +34,9 @@ scores_repository.save(score9)
 score10 = Score(10, 1, False, False)
 scores_repository.save(score10)
 
-driver1 = Driver("Charles Leclerc", 10, 0, 0)
+driver1 = Driver("Charles Leclerc", 0, 0, 0)
 driver_repository.save(driver1)
-driver2 = Driver("Carlos Sainz", 15, 0, 0)
+driver2 = Driver("Carlos Sainz", 0, 0, 0)
 driver_repository.save(driver2)
 
 race1 = Race('Abu Dhabi', 'Yas Marina')
