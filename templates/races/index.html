@@ -3,17 +3,20 @@
 {% block content %}
     <h2>Races</h2>
     <hr>
-    <ul>
-        {% for race in races %}
+    <div class="races-list">
+        <ul>
+            {% for race in races %}
             <li>
-                <img src="static/images/circuits/{{race.location}}.png" alt="hasn't worked" class="race-img">
-                <a href="/races/{{race.id}}">{{ race.location }}</a>: {{race.circuit}}
-                <form action="/races/{{race.id}}/delete" method="post">
-                    <button type="submit">Delete</button>
-                </form>
+                <div>
+                    <h3><a href="/races/{{race.id}}">{{ race.location }}</a></h3>
+                    <h4>{{ race.circuit }}</h4>
+                </div>
+                <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
             </li>
-        {% endfor %}
-    </ul>
+            {% endfor %}
+        </ul>
+    </div>
+    
     <form action="/races/new">
         <button type="submit">New Race</button>
     </form>

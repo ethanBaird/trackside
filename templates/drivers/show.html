@@ -1,41 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="driver-profile">
-    <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
-    <hr>
-    
+
+<h2>{{ driver.name }} - {{ driver.constructor }}</h2>
+<hr>
+<div class="driver-profile"></div>
     <h3>Stats</h3>  
-    <ul>
-        <li>Points: {{ driver.points }}</li>
-        <li>  Wins: {{ driver.wins }} </li>
-        <li>  Podiums: {{ driver.podiums }}</li>
-    </ul> 
-    <hr>
+    <ul>    
+        <li>
+            <div>
+                <h3>{{ driver.name }}</h3>
+                <h4>{{ driver.constructor }}</h4>
+                <h4>{{ driver.points }}pts</h4>
+                <p>{{ driver.wins }} wins</p>
+                <p>{{ driver.podiums }} podiums</p>
+            </div>
+            <img src="static/images/drivers/{{driver.name}}" alt="Image of {{driver.name}}" class="driver-img">     
+        </li>
+    </ul>
+<hr>
+</div>
+<div class="driver-results">
+    <h3>Results</h3>
+    <table>
+        <tr>
+            <th>Race</th>
+            <th>Position</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.race.location }}</td>
+            <td>{{ result.score.position }}</td>
+        </tr>
+        {% endfor %}
+    </table>  
 </div>
 
-<h3>Results</h3>
-<table>
-<tr>
-    <th>Race</th>
-    <th>Position</th>
-</tr>
-{% for result in results %}
-<tr>
-    <td>{{ result.race.location }}</td>
-    <td>{{ result.score.position }}</td>
-</tr>
-{% endfor %}
-</table>    
-<br>
-<form action="/drivers/{{driver.id}}/edit">
-    <button type="submit">Edit</button>
-</form>
-<br>
-<form action="/drivers/{{driver.id}}/delete" method="post">
-    <button type="submit">Delete</button>
-</form>
-
-
+  
 <br>
 {% endblock content %}

@@ -18,6 +18,12 @@ option {
     color: #2D2D2A;
 }
 
+input {
+    font-family: 'Jost', sans-serif;
+    color: #2D2D2A;
+
+}
+
 header {
     background-color: #FB3640;
     color: #FFF;
@@ -78,6 +84,25 @@ article h2 {
     padding: 0px 16px;
 }
 
+.races-list ul{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    list-style: none;
+    padding: 0px;
+}
+
+.races-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background-color: #7C809B;
+    color: #fff;
+    border: 1px solid #FB3640;
+    border-radius: 5px;
+    padding: 0px 16px;
+}
+
 article a {
     text-decoration: none;
     color: #2D2D2A;
@@ -93,9 +118,9 @@ article a:hover {
 }
 
 .race-img {
-    height: 150px;
-    width: 225px;
-    border-radius: 5px 10px;
+    height: 300px;
+    width: 450px;
+    padding: 1rem 0rem;
 }
 
 
