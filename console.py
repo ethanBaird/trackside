@@ -13,49 +13,54 @@ scores_repository.delete_all()
 driver_repository.delete_all()
 races_repository.delete_all()
 
-score1 = Score(1, 25, True, True)
-scores_repository.save(score1)
-score2 = Score(2, 19, False, True)
-scores_repository.save(score2)
-score3 = Score(3, 15, False, True)
-scores_repository.save(score3)
-score4 = Score(4, 12, False, False)
-scores_repository.save(score4)
-score5 = Score(5, 10, False, False)
-scores_repository.save(score5)
-score6 = Score(6, 8, False, False)
-scores_repository.save(score6)
-score7 = Score(7, 6, False, False)
-scores_repository.save(score7)
-score8 = Score(8, 4, False, False)
-scores_repository.save(score8)
-score9 = Score(9, 2, False, False)
-scores_repository.save(score9)
-score10 = Score(10, 1, False, False)
-scores_repository.save(score10)
+p1 = Score(1, 25, True, True)
+p2 = Score(2, 19, False, True)
+p3 = Score(3, 15, False, True)
+p4 = Score(4, 12, False, False)
+p5 = Score(5, 10, False, False)
+p6 = Score(6, 8, False, False)
+p7 = Score(7, 6, False, False)
+p8 = Score(8, 4, False, False)
+p9 = Score(9, 2, False, False)
+p10 = Score(10, 1, False, False)
 
-driver1 = Driver("Charles Leclerc", 0, 0, 0)
-driver_repository.save(driver1)
-driver2 = Driver("Carlos Sainz", 0, 0, 0)
-driver_repository.save(driver2)
+scores = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+for score in scores:
+    scores_repository.save(score)
 
-race1 = Race('Abu Dhabi', 'Yas Marina')
-races_repository.save(race1)
-result1 = Result(score1, driver1, 'Ferarri', race1)
-results_repository.save(result1)
-result2 = Result(score2, driver2, 'Ferarri', race1)
-results_repository.save(result2)
+#ferrari
+d1 = Driver("Charles Leclerc", 'Ferarri', 0, 0, 0)
+d2 = Driver("Carlos Sainz", 'Ferarri', 0, 0, 0)
+#redbull
+d3 = Driver("Max Verstappen", 'Red Bull', 0, 0, 0)
+d4 = Driver("Sergio Perez", 'Red Bull', 0, 0, 0)
+#mercedes
+d5 = Driver('Lewis Hamilton', 'Mercedes-AMG', 0, 0, 0)
+d6 = Driver("George Russell", "Mercedes-AMG", 0, 0, 0)
+#mclaren
+d7 = Driver('Lando Norris', 'McLaren', 0, 0, 0)
+d8 = Driver('Daniel Ricciardo', 'McLaren', 0, 0, 0)
+#alpine
+d9 = Driver("Fernando Alonso", 'Alpine', 0, 0, 0)
+d10 = Driver("Esteban Ocon", 'Alpine', 0, 0, 0)
+#astonmartin
+d11 = Driver("Sebastian Vettel", 'Aston Martin', 0, 0, 0)
+d12 = Driver("Lance Stroll", 'Aston Martin', 0, 0, 0)
+#haas
+d13 = Driver("Mick Schumacher", 'Haas', 0, 0, 0)
+d14 = Driver("Kevin Magnussen", 'Haas', 0, 0, 0)
+#williams
+d15 = Driver("Nicholas Latifi", 'Williams', 0, 0, 0)
+d16 = Driver("Alex Albon", 'Williams', 0, 0, 0)
+#alfaromeo
+d17 = Driver("Valtteri Bottas", 'Alfa Romeo', 0, 0, 0)
+d18 = Driver("Zhou Guanyou", 'Alfa Romeo', 0, 0, 0)
+#alphatauri
+d19 = Driver("Pierre Gasly", 'AlphaTauri', 0, 0, 0)
+d20 = Driver("Yuki Tsunoda", 'AlphaTauri', 0, 0, 0)
 
-
-race2 = Race('Bahrain', 'Bahrain International Circuit')
-races_repository.save(race2)
-result1 = Result(score1, driver1, 'Ferarri', race2)
-results_repository.save(result1)
-result2 = Result(score2, driver2, 'Ferarri', race2)
-results_repository.save(result2)
-
-
-
-
+drivers = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20]
+for driver in drivers:
+    driver_repository.save(driver)
 
 pdb.set_trace()

@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <h2>Add Race</h2>
 <hr>
-    <form action="/races/new" method="post">
+    <form action="/races/new" method="post" class="new-race-form">
+        <h3>Race</h3>
+        
         <label for="location">Location:</label>
         <input type="text" name="location" id="location">
 
@@ -15,6 +18,7 @@
         {% for score in scores %}
             <label for="p{{ scores.index(score)+1 }}">P{{ scores.index(score)+1 }}:</label>
             <select name="p{{ scores.index(score)+1 }}" id="p{{ scores.index(score)+1 }}">
+                <option value="choose" disabled selected>-select a driver-</option>
                 {% for driver in drivers %}
                     <option value="{{driver.id}}">{{driver.name}}</option>
                 {% endfor %}
@@ -25,7 +29,5 @@
         <button type="submit">Add Race</button>
     </form>
 <br>
-    In this form there should be ability to adde driver results
-
 
 {% endblock content %}

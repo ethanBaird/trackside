@@ -4,11 +4,11 @@ from models.driver import Driver
 
 def save(driver):
     sql = """
-        INSERT INTO drivers (name, points, wins, podiums)
-        VALUES (%s, %s, %s, %s)
+        INSERT INTO drivers (name, constructor, points, wins, podiums)
+        VALUES (%s, %s, %s, %s, %s)
         RETURNING id
     """
-    values = [driver.name, driver.points, driver.wins, driver.podiums]
+    values = [driver.name, driver.constructor, driver.points, driver.wins, driver.podiums]
     results = run_sql(sql, values)
     id = results[0]["id"]
     driver.id = id
@@ -22,7 +22,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        driver = Driver(row['name'], row['points'], row['wins'], row['podiums'], row['id'])
+        driver = Driver(row['name'], row['constructor'], row['points'], row['wins'], row['podiums'], row['id'])
         drivers.append(driver)
     return drivers
 
@@ -36,16 +36,16 @@ def select(id):
 
     if results:
         result = results[0]
-        driver = Driver(result['name'], result['points'], result['wins'], result['podiums'], result['id'])
+        driver = Driver(result['name'], result['constructor'], result['points'], result['wins'], result['podiums'], result['id'])
     return driver
 
 def update(driver):
     sql = """
         UPDATE drivers
-        SET (name, points, wins, podiums) = (%s, %s, %s, %s)
+        SET (name,constructor, points, wins, podiums) = (%s, %s, %s, %s, %s)
         WHERE id = %s
     """
-    values = [driver.name, driver.points, driver.wins, driver.podiums, driver.id]
+    values = [driver.name, driver.constructor, driver.points, driver.wins, driver.podiums, driver.id]
     run_sql(sql, values)
 
 def delete(id):

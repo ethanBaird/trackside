@@ -5,10 +5,13 @@
     <hr>
     <ul>
         {% for race in races %}
-            <li><a href="/races/{{race.id}}">{{ race.location }}</a></b></li>
-            <form action="/races/{{race.id}}/delete" method="post">
-                <button type="submit">Delete</button>
-            </form>
+            <li>
+                <img src="static/images/circuits/{{race.location}}.png" alt="hasn't worked" class="race-img">
+                <a href="/races/{{race.id}}">{{ race.location }}</a>: {{race.circuit}}
+                <form action="/races/{{race.id}}/delete" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
         {% endfor %}
     </ul>
     <form action="/races/new">

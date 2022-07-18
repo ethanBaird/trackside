@@ -10,6 +10,7 @@ drivers_blueprint = Blueprint("drivers", __name__)
 @drivers_blueprint.route('/drivers')
 def drivers():
     drivers = drivers_repository.select_all()
+    drivers.sort(key=lambda x: x.points, reverse=True)
     return render_template('drivers/index.html', drivers=drivers)
 
 # show '/drivers/<id>'
@@ -28,10 +29,11 @@ def new():
 @drivers_blueprint.route('/drivers/new', methods=['POST'])
 def create():
     name = request.form['name']
+    constructor = request.form['constructor']
     points = request.form['points']
     wins = request.form['wins']
     podiums = request.form['podiums']
-    driver = Driver(name, points, wins, podiums)
+    driver = Driver(name, constructor, points, wins, podiums)
     drivers_repository.save(driver)
     return redirect('/drivers')
 
@@ -45,10 +47,11 @@ def edit(id):
 @drivers_blueprint.route('/drivers/<id>/edit', methods=['POST'])
 def update(id):
     name = request.form['name']
+    constructor = request.form['constructor']
     points = request.form['points']
     wins = request.form['wins']
     podiums = request.form['podiums']
-    driver = Driver(name, points, wins, podiums, id)
+    driver = Driver(name, constructor, points, wins, podiums, id)
     drivers_repository.update(driver)
     return redirect('/drivers')
 

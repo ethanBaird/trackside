@@ -5,15 +5,17 @@
     <hr>
     <ul>
         {% for driver in drivers %}
-            <li><a href="/drivers/{{driver.id}}">{{ driver.name }}</a>: <b>{{ driver.points }}pts</b></li>
-            <form action="/drivers/{{driver.id}}/delete" method="post">
-                <button type="submit">Delete</button>
-            </form>
+            <li>
+                <div>
+                    <h3>
+                        <a href="/drivers/{{driver.id}}">{{ driver.name }}</a><b> - {{ driver.constructor }}</b>
+                    </h3>
+                    <h4>{{ driver.points }}pts</h4>
+                    <p>{{ driver.wins }} wins</p>
+                    <p>{{ driver.podiums }} podiums</p>
+                </div>
+                <img src="static/images/drivers/{{driver.name}}.png" alt="hasn't worked" class="driver-img">
+            </li>
         {% endfor %}
     </ul>
-    <form action="/drivers/new">
-        <button type="submit">New Driver</button>
-    </form>
-    
-    
 {% endblock content %}

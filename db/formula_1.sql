@@ -21,6 +21,7 @@ CREATE TABLE races (
 CREATE TABLE drivers (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
+    constructor VARCHAR(255),
     points INT,
     wins INT,
     podiums INT

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>{{ driver.name }} - Constructor</h2>
+<h2>{{ driver.name }} - {{ driver.constructor }}</h2>
 <hr>
 
 <h3>Stats</h3>  
@@ -24,17 +24,15 @@
 </tr>
 {% endfor %}
 </table>    
-   
-   
-
-    <form action="/drivers/{{driver.id}}/edit">
-        <button type="submit">Edit</button>
-    </form>
-    <form action="/drivers/{{driver.id}}/delete" method="post">
-        <button type="submit">Delete</button>
-    </form>
+<br>
+<form action="/drivers/{{driver.id}}/edit">
+    <button type="submit">Edit</button>
+</form>
+<br>
+<form action="/drivers/{{driver.id}}/delete" method="post">
+    <button type="submit">Delete</button>
+</form>
 
 
 <br>
-Would be nice to have result history here. Last three races maybe?
 {% endblock content %}
