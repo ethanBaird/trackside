@@ -8,13 +8,10 @@ import repositories.races_repository as races_repository
 import repositories.scores_repository as scores_repository
 import repositories.results_repository as results_repository
 
-
 results_repository.delete_all()
 scores_repository.delete_all()
 driver_repository.delete_all()
 races_repository.delete_all()
-
-
 
 score1 = Score(1, 25, True, True)
 scores_repository.save(score1)

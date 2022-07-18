@@ -7,8 +7,9 @@ import repositories.races_repository as races_repository
 
 results_blueprint = Blueprint("results", __name__)
 
-#index
+#show one - on race page
 @results_blueprint.route('/races/results/<race_id>')
 def race_results(race_id):
     results = results_repository.select(race_id)
     return render_template('races/results/index.html', results=results)
+

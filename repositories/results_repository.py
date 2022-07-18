@@ -18,6 +18,20 @@ def save(result):
     id = results[0]["id"]
     result.id = id
 
+def select_all():
+    race_results = []
+
+    sql = "SELECT * FROM results"
+    results = run_sql(sql)
+
+    for row in results:
+        race = races_repository.select(row['race_id'])
+        driver = drivers_repository.select(row['driver_id'])
+        score = scores_repository.select(row['score_id'])
+        result = Result(score, driver, row['constructor'], race, row['id'])
+        race_results.append(result)
+    return race_results
+
 def select(race_id):
     race_results = []
     sql = """

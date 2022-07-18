@@ -55,3 +55,9 @@ def update(id):
 def delete(id):
     drivers_repository.delete(id)
     return redirect('/drivers')
+
+# standings
+@drivers_blueprint.route('/standings')
+def standings():
+
+    return render_template('standings/index.html')
