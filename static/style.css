@@ -8,5 +8,10 @@ main {
 }
 
 nav {
+    background-color: antiquewhite;
     width: 25%
+}
+
+footer {
+    background-color: red;
 }

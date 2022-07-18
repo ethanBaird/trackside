@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<ul>
-    {% for result in results %}
-        <li>
-            P{{ result.score.position }}: {{ result.driver.name }} {{ result.score.points }}pts
-        </li>
-    {% endfor %}
-</ul>    
+        <table>
+            <tr>
+                <th>Positon</th>
+                <th>Driver</th>
+                <th>Points</th>
+            </tr>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.score.position }}</td>
+                <td>{{ result.driver.name }}</td>
+                <td>{{ result.score.points }}</td>
+            </tr>
+            {% endfor %}
+        </table>    
 
 {% endblock content %}

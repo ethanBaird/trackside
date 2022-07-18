@@ -11,8 +11,4 @@ results_blueprint = Blueprint("results", __name__)
 @results_blueprint.route('/races/results/<race_id>')
 def race_results(race_id):
     results = results_repository.select(race_id)
-    for result in results:
-        result.score = scores_repository.select(result.score)
-        result.driver = drivers_repository.select(result.driver)
-        result.race = races_repository.select(result.race)
     return render_template('races/results/index.html', results=results)

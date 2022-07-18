@@ -1,6 +1,11 @@
+from lib2to3.pgen2 import driver
 from unittest import result
 from db.run_sql import run_sql
 from models.result import Result
+
+import repositories.scores_repository as scores_repository
+import repositories.drivers_repository as drivers_repository
+import repositories.races_repository as races_repository
 
 def save(result):
     sql = """
@@ -8,7 +13,7 @@ def save(result):
         VALUES (%s, %s, %s, %s)
         RETURNING id
     """
-    values = [result. score_id, result.driver_id, result.constructor, result.race_id]
+    values = [result.score.id, result.driver.id, result.constructor, result.race.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
     result.id = id
@@ -23,7 +28,10 @@ def select(race_id):
     results = run_sql(sql, values)
 
     for row in results:
-        result = Result(row['score_id'], row['driver_id'], row['constructor'], row['id'])
+        race = races_repository.select(row['race_id'])
+        driver = drivers_repository.select(row['driver_id'])
+        score = scores_repository.select(row['score_id'])
+        result = Result(score, driver, row['constructor'], race, row['id'])
         race_results.append(result)
     return race_results
 

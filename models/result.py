@@ -1,12 +1,12 @@
 class Result:
 
-    def __init__(self, _score_id, _driver_id, _constructor, _race_id, _id=None):
-        self.score = _score_id
-        self.driver = _driver_id
+    def __init__(self, _score, _driver, _constructor, _race, _id=None):
+        self.score = _score
+        self.driver = _driver
         self.constructor = _constructor
-        self.race = _race_id
+        self.race = _race
         self.id = _id
 
-    
+        
 
 

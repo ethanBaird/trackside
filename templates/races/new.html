@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h2>Add Race</h2>
+<hr>
     <form action="/races/new" method="post">
         <label for="location">Location:</label>
         <input type="text" name="location" id="location">
@@ -10,4 +12,8 @@
 
         <button type="submit">Add Race</button>
     </form>
+<br>
+    In this form there should be ability to adde driver results
+
+
 {% endblock content %}

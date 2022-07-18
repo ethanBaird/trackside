@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {{ driver.name }} {{ driver.points }} {{ driver.wins }} {{ driver.podiums }}
+<h2>{{ driver.name }} - Constructor</h2>
+<hr>
+
+   Points: {{ driver.points }} 
+   Wins: {{ driver.wins }} 
+   Podiums: {{ driver.podiums }}
 
     <form action="/drivers/{{driver.id}}/edit">
         <button type="submit">Edit</button>
@@ -9,4 +14,6 @@
     <form action="/drivers/{{driver.id}}/delete" method="post">
         <button type="submit">Delete</button>
     </form>
+<br>
+Would be nice to have result history here. Last three races maybe?
 {% endblock content %}
