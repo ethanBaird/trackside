@@ -10,6 +10,18 @@
         <label for="circuit">Circuit:</label>
         <input type="text" name="circuit" id="circuit">
 
+        <h3>Results</h3>
+        
+        {% for score in scores %}
+            <label for="p{{ scores.index(score)+1 }}">P{{ scores.index(score)+1 }}:</label>
+            <select name="p{{ scores.index(score)+1 }}" id="p{{ scores.index(score)+1 }}">
+                {% for driver in drivers %}
+                    <option value="{{driver.id}}">{{driver.name}}</option>
+                {% endfor %}
+            </select>
+        {% endfor %}
+        
+        
         <button type="submit">Add Race</button>
     </form>
 <br>

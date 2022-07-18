@@ -2,6 +2,7 @@ from flask import Flask, Blueprint, redirect, render_template, request
 from models.driver import Driver
 
 import repositories.drivers_repository as drivers_repository
+import repositories.results_repository as results_repository
 
 drivers_blueprint = Blueprint("drivers", __name__)
 
@@ -15,7 +16,8 @@ def drivers():
 @drivers_blueprint.route('/drivers/<id>')
 def show(id):
     driver = drivers_repository.select(id)
-    return render_template('drivers/show.html', driver=driver)
+    results = results_repository.select_by_driver(id)
+    return render_template('drivers/show.html', driver=driver, results=results)
 
 # new '/drivers/new'
 @drivers_blueprint.route('/drivers/new')

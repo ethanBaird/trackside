@@ -38,6 +38,7 @@ def select_all():
         race_results.append(result)
     return race_results
 
+# results by race
 def select(race_id):
     race_results = []
     sql = """
@@ -54,6 +55,25 @@ def select(race_id):
         result = Result(score, driver, row['constructor'], race, row['id'])
         race_results.append(result)
     return race_results
+
+#results by driver
+def select_by_driver(driver_id):
+    driver_results = []
+    sql = """
+        SELECT * FROM results
+        WHERE driver_id = %s
+    """
+    values = [driver_id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        race = races_repository.select(row['race_id'])
+        driver = drivers_repository.select(row['driver_id'])
+        score = scores_repository.select(row['score_id'])
+        result = Result(score, driver, row['constructor'], race, row['id'])
+        driver_results.append(result)
+    return driver_results
+        
 
 
 def delete_all():
