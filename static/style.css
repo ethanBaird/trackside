@@ -201,7 +201,7 @@ article a:hover {
     color: #ad0624;
 }
 
-.races-list ul{
+.races-list ul {
     display: flex;
     flex-direction: column;
     color: #2D2D2A;

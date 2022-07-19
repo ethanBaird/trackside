@@ -4,17 +4,22 @@
 <h2>{{ race.location }} - {{ race.circuit }}</h2>
 <hr>
     <table>
-        <tr>
-            <th>Positon</th>
-            <th>Driver</th>
-            <th>Points</th>
-        </tr>
-        {% for result in results %}
-        <tr>
-            <td>{{ result.score.position }}</td>
-            <td>{{ result.driver.name }}</td>
-            <td>{{ result.score.points }}</td>
-        </tr>
-        {% endfor %}
+        <thead>
+            <tr>
+                <th>Positon</th>
+                <th>Driver</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.score.position }}</td>
+                <td><b>{{ result.driver.name }}</b></td>
+                <td>{{ result.score.points }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
     </table>  
 {% endblock content %}
