@@ -74,7 +74,7 @@ article {
 }
 
 article h2 {
-    margin-top: 0;
+    margin: 0.5rem 0rem;
     color:#ad0624
 }
 
@@ -93,6 +93,43 @@ article h2 {
     border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
+}
+
+.show-driver-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.show-driver-header img {
+    height: 75px;
+    width: 75px;
+}
+
+.show-driver {
+    display: flex;
+}
+
+.show-driver-stats {
+    list-style: none;
+}
+
+.driver-profile {
+    display: inline-block
+}
+
+.driver-results {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.races-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.races-list-header a {
+    color: #ad0624;
 }
 
 .races-list ul{

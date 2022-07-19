@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Races</h2>
+    <div class="races-list-header">
+        <h2>Races</h2>
+        <a href="/races/new">Add New Race</a>
+    </div>
     <hr>
     <ul class="races-list">
         {% for race in races %}
@@ -37,16 +40,14 @@
                             {% endfor %}
                         </h5>
                     </li>
-                <b><a href="/races/{{race.id}}">see all results</a></b>
+                <b><a href="/races/{{race.id}}">see full results</a></b>
             </div>
             <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
         </li>
         {% endfor %}
     </ul>
     
-    <form action="/races/new">
-        <button type="submit">New Race</button>
-    </form>
+    
     
     
 {% endblock content %}

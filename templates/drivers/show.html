@@ -1,27 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<h2>{{ driver.name }} - {{ driver.constructor }}</h2>
-<hr>
-<div class="driver-profile"></div>
-    <h3>Stats</h3>  
-    <ul>    
-        <li>
-            <div>
-                <h3>{{ driver.name }}</h3>
-                <h4>{{ driver.constructor }}</h4>
-                <h4>{{ driver.points }}pts</h4>
-                <p>{{ driver.wins }} wins</p>
-                <p>{{ driver.podiums }} podiums</p>
-            </div>
-            <img src="../../static/images/drivers/{{driver.name}}.png" alt="Image of {{driver.name}}" class="driver-img">
-        </li>
-    </ul>
-<hr>
+<div class="show-driver-header">
+    <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
 </div>
+<hr>
+<div class="show-driver">
+    <div class="driver-profile">
+    <h3>Profile</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias velit provident sint asperiores sequi eos id incidunt impedit eum? Autem sed, minima molestiae facilis quisquam inventore sit optio. Quas, ex.</p>
+    
+    </div>
+    <img src="../../static/images/drivers/{{driver.name}}.png" alt="Image of {{driver.name}}" class="driver-img">
+</div>
+<h3>Race Results</h3>
 <div class="driver-results">
-    <h3>Results</h3>
     <table>
         <tr>
             <th>Race</th>
@@ -33,8 +26,13 @@
             <td>{{ result.score.position }}</td>
         </tr>
         {% endfor %}
-    </table>  
+    </table> 
+    <ul class="show-driver-stats">
+        <h4><li>Total Wins: {{driver.wins}}</li></h4>    
+        <h4><li>Total Podiums: {{driver.podiums}}</li></h4> 
+    </ul>   
 </div>
+
 
   
 <br>

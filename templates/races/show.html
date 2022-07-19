@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <a href="/races/results/{{race.id}}">{{ race.location }}</a> {{ race.circuit }}
-
+<h2>{{ race.location }} - {{ race.circuit }}</h2>
+<hr>
     <table>
         <tr>
             <th>Positon</th>
@@ -17,12 +17,4 @@
         </tr>
         {% endfor %}
     </table>  
-
-    <form action="/races/{{race.id}}/edit">
-        <button type="submit">Edit</button>
-    </form>
-    <form action="/races/{{race.id}}/delete" method="post">
-        <button type="submit">Delete</button>
-    </form>
-
 {% endblock content %}
