@@ -8,8 +8,30 @@
             {% for race in races %}
             <li>
                 <div>
-                    <h3><a href="/races/{{race.id}}">{{ race.location }}</a></h3>
-                    <h4>{{ race.circuit }}</h4>
+                    <h3>{{ race.location }}</a></h3>
+                    <h3>{{ race.circuit }}</h3>
+                    <h4>1st -  
+                        {% for result in results %}
+                            {% if result.race.id == race.id and result.score.position == 1 %}
+                                {{ result.driver.name }}
+                            {% endif %}
+                        {% endfor %}
+                    </h4>
+                    <h5>2nd - 
+                        {% for result in results %}
+                            {% if result.race.id == race.id and result.score.position == 2 %}
+                                {{ result.driver.name }}
+                            {% endif %}
+                        {% endfor %}
+                    </h5>
+                    <h5>3rd - 
+                        {% for result in results %}
+                            {% if result.race.id == race.id and result.score.position == 3 %}
+                                {{ result.driver.name }}
+                            {% endif %}
+                        {% endfor %}
+                    </h5>
+                    <b><a href="/races/{{race.id}}">see all results</a></b>
                 </div>
                 <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
             </li>

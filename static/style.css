@@ -110,6 +110,7 @@ article a {
 
 article a:hover {
     text-decoration: underline;
+    color: #FB3640;
 }
 
 .driver-img {

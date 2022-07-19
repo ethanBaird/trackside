@@ -13,8 +13,7 @@ races_blueprint = Blueprint("races", __name__)
 @races_blueprint.route('/races')
 def races():
     races = races_repository.select_all()
-    for race in races:
-        results = results_repository.select(race.id)
+    results = results_repository.select_all()
     return render_template('races/index.html', races=races, results=results)
 
 # show '/races/<id>'
