@@ -10,6 +10,5 @@ results_blueprint = Blueprint("results", __name__)
 #show one - on race page
 @results_blueprint.route('/races/results/<race_id>')
 def race_results(race_id):
-    results = results_repository.select(race_id)
-    return render_template('races/results/index.html', results=results)
+    pass
 

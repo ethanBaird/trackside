@@ -21,7 +21,8 @@ def races():
 @races_blueprint.route('/races/<id>')
 def show(id):
     race = races_repository.select(id)
-    return render_template('races/show.html', race=race)
+    results = results_repository.select(id)
+    return render_template('races/show.html', race=race, results=results)
 
 # new '/races/new'
 @races_blueprint.route('/races/new')

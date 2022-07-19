@@ -3,10 +3,26 @@
 {% block content %}
     <a href="/races/results/{{race.id}}">{{ race.location }}</a> {{ race.circuit }}
 
+    <table>
+        <tr>
+            <th>Positon</th>
+            <th>Driver</th>
+            <th>Points</th>
+        </tr>
+        {% for result in results %}
+        <tr>
+            <td>{{ result.score.position }}</td>
+            <td>{{ result.driver.name }}</td>
+            <td>{{ result.score.points }}</td>
+        </tr>
+        {% endfor %}
+    </table>  
+
     <form action="/races/{{race.id}}/edit">
         <button type="submit">Edit</button>
     </form>
     <form action="/races/{{race.id}}/delete" method="post">
         <button type="submit">Delete</button>
     </form>
+
 {% endblock content %}
