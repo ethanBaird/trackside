@@ -20,36 +20,9 @@ def races():
 @races_blueprint.route('/races/<id>')
 def show(id):
     race = races_repository.select(id)
-    results = results_repository.select(id)
+    results = results_repository.select_by_race(id)
     return render_template('races/show.html', race=race, results=results)
-
-# new '/races/new'
-@races_blueprint.route('/races/new')
-def new():
-    races = races_repository.select_all()
-    scores = scores_repository.select_all()
-    drivers = drivers_repository.select_all()
-    return render_template('races/new.html', races=races, drivers=drivers, scores=scores)
-
-# create '/races/new' method=['POST']
-@races_blueprint.route('/races/new', methods=['POST'])
-def create():
-    breakpoint()
-    id = request.form['race_id']
-    race = races_repository.select(id)
     
-    # create result for each form option
-    scores = scores_repository.select_all()
-    position = 1
-    for score in scores:
-        driver_id = request.form[f'p{position}']
-        driver = drivers_repository.select(driver_id)
-        result = Result(score, driver, 'constructor', race)
-        results_repository.save(result)
-        position += 1
-
-    return redirect('/races')
-
 # edit 'races/<id>/edit
 @races_blueprint.route('/races/<id>/edit')
 def edit(id):

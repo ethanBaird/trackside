@@ -39,7 +39,7 @@ def select_all():
     return race_results
 
 # results by race
-def select(race_id):
+def select_by_race(race_id):
     race_results = []
     sql = """
         SELECT * FROM results

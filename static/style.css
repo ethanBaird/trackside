@@ -1,3 +1,5 @@
+/* General CSS */
+
 body {
     font-family: 'Jost', sans-serif;
     margin: 0;
@@ -11,9 +13,7 @@ button {
     background: none!important;
     border: none;
     padding: 0!important;
-    /*optional*/
     font-family: 'Jost', sans-serif;
-    /*input has OS specific font-family*/
     color: #ad0624;
     text-decoration: none;
 }
@@ -36,8 +36,9 @@ option {
 input {
     font-family: 'Jost', sans-serif;
     color: #2D2D2A;
-
 }
+
+/* Welcome page CSS */
 
 .welcome {
     display: flex;
@@ -58,11 +59,7 @@ input {
     text-decoration: underline;
 }
 
-
-.welcome-nav {
-    background-color: #fff;
-
-}
+/* main index CSS */
 
 header {
     background-color: #ad0624;
@@ -83,10 +80,6 @@ header h1 {
     margin-right: 3rem;
     width: 10%;
  
-}
-
-.home-statement {
-    font-size: xx-large;
 }
 
 main {
@@ -119,14 +112,33 @@ nav a:hover {
 article {
     color: #2D2D2A;
     background-color: #fff;
-    padding: 1rem;
-    width: 70%;
+    padding: 2rem;
+    width: 75%;
 }
 
 article h2 {
     margin: 0.5rem 0rem;
     color:#ad0624
 }
+
+article a {
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    color: #fff;
+}
+
+article a:hover {
+    text-decoration: underline;
+    color: #ad0624;
+}
+
+/* Home CSS */
+
+.home-statement {
+    font-size: xx-large;
+}
+
+/* drivers CSS */
 
 .drivers-list ul {
     display: flex;
@@ -172,6 +184,13 @@ article h2 {
     justify-content: space-evenly;
 }
 
+.driver-img {
+    height: 192px;
+    width: 192px;
+}
+
+/* races CSS */
+
 .races-list-header {
     display: flex;
     justify-content: space-between;
@@ -203,6 +222,8 @@ article h2 {
 
 .new-race-form {
     width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .driver-select {
@@ -222,37 +243,19 @@ article h2 {
     margin-top: 0px;
 }
 
-article a {
-    text-decoration: none;
-    font-family: 'Jost', sans-serif;
-    color: #fff;
-}
-
-article a:hover {
-    text-decoration: underline;
-    color: #ad0624;
-}
-
-.driver-img {
-    height: 192px;
-    width: 192px;
-}
-
 .race-img {
     height: 300px;
     width: 450px;
     padding: 1rem 0rem;
 }
 
+/* footer css */
 
 footer {
     background-color: #ad0624;
 }
 
-.new-race-form {
-    display: flex;
-    flex-direction: column;
-}
+/* all tables CSS */
 
 table {
     table-layout: fixed;
