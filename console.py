@@ -63,18 +63,19 @@ drivers = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16
 for driver in drivers:
     driver_repository.save(driver)
 
-# r1 = Race('Bahrain', 'Bahrain Intl Circuit')
-# r2 = Race('Saudi Arabia', 'Jeddah Corniche Circuit')
-# r3 = Race('Australia', 'Albert Park Circuit')
-# r4 = Race('Italy', 'Autodromo Enzo e Dino Ferrari')
-# r5 = Race('USA', 'Miami International Autodrome')
-# r6 = Race('Spain', 'Circuit de Barcelona-Catalunya')
-# r7 = Race('Monaco', 'Circuit de Monaco')
-# r8 = Race('Azerbaijan', 'Baku City Circuit')
-# r9 = Race('Canada', 'Circuit Gilles-Villeneuve')
-# r10 = Race('Great Britain', 'Silverstone Circuit')
-# r11 = Race('Austria', 'Red Bull Ring')
+r1 = Race('Bahrain', 'Bahrain Intl Circuit')
+r2 = Race('Saudi Arabia', 'Jeddah Corniche Circuit')
+r3 = Race('Australia', 'Albert Park Circuit')
+r4 = Race('Italy', 'Autodromo Enzo e Dino Ferrari')
+r5 = Race('USA', 'Miami International Autodrome')
+r6 = Race('Spain', 'Circuit de Barcelona-Catalunya')
+r7 = Race('Monaco', 'Circuit de Monaco')
+r8 = Race('Azerbaijan', 'Baku City Circuit')
+r9 = Race('Canada', 'Circuit Gilles-Villeneuve')
+r10 = Race('Great Britain', 'Silverstone Circuit')
 
-
+races = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10]
+for race in races:
+    races_repository.save(race)
 
 pdb.set_trace()

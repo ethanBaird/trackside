@@ -5,29 +5,34 @@
 <h2>Add Race</h2>
 <hr>
     <form action="/races/new" method="post" class="new-race-form">
-        <h3>Race</h3>
-        
-        <label for="location">Location:</label>
-        <input type="text" name="location" id="location">
-
-        <label for="circuit">Circuit:</label>
-        <input type="text" name="circuit" id="circuit">
+        <label for="race">Race</label>
+        <select name="race" id="race">
+            <option value="choose" disabled selected>choose a race</option>
+            {% for race in races %}
+                <option value="{{race.location}}">{{ race.location }}</option>
+            {% endfor %}
+        </select>
 
         <h3>Results</h3>
-        
-        {% for score in scores %}
-            <label for="p{{ scores.index(score)+1 }}">P{{ scores.index(score)+1 }}:</label>
-            <select name="p{{ scores.index(score)+1 }}" id="p{{ scores.index(score)+1 }}">
-                <option value="choose" disabled selected>-select a driver-</option>
-                {% for driver in drivers %}
-                    <option value="{{driver.id}}">{{driver.name}}</option>
-                {% endfor %}
-            </select>
-        {% endfor %}
-        
-        
+        <table>
+            {% for score in scores %}
+            <tr>
+                <td>
+                    <label for="p{{ scores.index(score)+1 }}">P{{ scores.index(score)+1 }}:</label>
+                </td>
+                <td>
+                    <select name="p{{ scores.index(score)+1 }}" id="p{{ scores.index(score)+1 }}">
+                        <option value="choose" disabled selected>choose a driver</option>
+                        {% for driver in drivers %}
+                        <option value="{{driver.id}}">{{driver.name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
         <button type="submit">Add Race</button>
     </form>
-<br>
-
+<hr>
 {% endblock content %}

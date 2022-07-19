@@ -151,6 +151,19 @@ article h2 {
     padding: 0px 16px;
 }
 
+.new-race-form {
+    width: 50%;
+}
+
+.driver-select {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.driver-select label {
+    text-align: left;
+}
+
 .top-three h4{
     margin-top: 0px;
 }

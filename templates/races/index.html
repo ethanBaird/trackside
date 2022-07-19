@@ -12,6 +12,7 @@
             <div>
                 <h3>{{ race.location }}</a></h3>
                 <h3>{{ race.circuit }}</h3>
+                {% if results %}
                 <ul class="top-three">
                     <li>
                         <h4>1st -  
@@ -41,6 +42,8 @@
                         </h5>
                     </li>
                 <b><a href="/races/{{race.id}}">see full results</a></b>
+                {% endif %}
+                
             </div>
             <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
         </li>

@@ -26,9 +26,10 @@ def show(id):
 # new '/races/new'
 @races_blueprint.route('/races/new')
 def new():
+    races = races_repository.select_all()
     scores = scores_repository.select_all()
     drivers = drivers_repository.select_all()
-    return render_template('races/new.html', drivers=drivers, scores=scores)
+    return render_template('races/new.html', races=races, drivers=drivers, scores=scores)
 
 # create '/races/new' method=['POST']
 @races_blueprint.route('/races/new', methods=['POST'])
