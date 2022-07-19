@@ -2,12 +2,18 @@ from flask import Flask, render_template
 from controllers.drivers_controller import drivers_blueprint
 from controllers.races_controller import races_blueprint
 
+
 app = Flask(__name__)
 
 app.register_blueprint(drivers_blueprint)
 app.register_blueprint(races_blueprint)
 
+
 @app.route('/')
+def welcome():
+    return render_template('welcome.html')
+
+@app.route('/index')
 def index():
     return render_template('index.html')
 

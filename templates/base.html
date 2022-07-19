@@ -11,32 +11,8 @@
     <link rel="icon" type="image/x-icon" href="/static/images/icon/icon.png">
     <title>Trackside</title>
 </head>
-<body>
-    <header>
-        <img src="{{ url_for('static', filename='images/icon/icon.png') }}" height="100px" width="100px" alt="icon" class="icon">
-        <h1>Trackside</h1>
-    </header>
-    <main>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/drivers">Drivers</a></li>
-                <li><a href="/races">Races</a></li>
-                <li><a href="/standings">Standings</a></li>
-                <br>
-                <li><a href="/admin" style="color: grey;">Admin</a></li>
-            </ul>
-        </nav>
-        <article>
-            {% block content %}
-            
-            {% endblock content %}   
-        </article>
-    </main>
-    <footer>
-        A footer of sorts will go here
-    </footer>
+{% block base %}
     
-    
+{% endblock base %}  
 </body>
 </html>

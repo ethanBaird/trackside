@@ -8,8 +8,19 @@ hr {
 }
 
 button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
     font-family: 'Jost', sans-serif;
-    color: #2D2D2A;
+    /*input has OS specific font-family*/
+    color: #ad0624;
+    text-decoration: none;
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 select {
@@ -28,11 +39,28 @@ input {
 
 }
 
-header {
-    background-color: #ad0624;
-    color: #FFF;
+.welcome {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    font-size: xx-large;
+    background-color: #FFF;
+    color: #ad0624;
+}
+
+.welcome-nav {
+    background-color: #fff;
+
+}
+
+header {
+    background-color: #fff;
+    color: #ad0624;
+    display: flex;
+    align-items: center;
     padding: 0.5rem 1rem;
+    border-bottom: 3px solid #ad0624;
 }
 
 .icon {
@@ -40,12 +68,17 @@ header {
     margin-right: 1rem;
 }
 
+.home-statement {
+    font-size: xx-large;
+}
+
 main {
     display: flex;
 }
 
 nav {
-    background-color: #042c49;
+    background-color: #fff;
+    border-right: 3px solid #ad0624;
     width: 20%;
 }
 
@@ -58,7 +91,7 @@ nav ul li {
 }
 
 nav a {
-    color: #fff;
+    color: #ad0624;
     text-decoration: none;
 }
 
@@ -98,11 +131,11 @@ article h2 {
 .show-driver-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.show-driver-header img {
-    height: 75px;
-    width: 75px;
+.show-driver-header a {
+    color: #ad0624;
 }
 
 .show-driver {
@@ -174,6 +207,7 @@ article h2 {
 
 article a {
     text-decoration: none;
+    font-family: 'Jost', sans-serif;
     color: #fff;
 }
 

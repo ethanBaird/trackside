@@ -1,8 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 
 {% block content %}
 <div class="show-driver-header">
     <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
+    <div>
+        <a href="/drivers/{{driver.id}}/edit">Edit</a>
+        <form action="/drivers/{{driver.id}}/delete" method="post">
+            <button type="submit">Delete</button>
+        </form> 
+    </div>
 </div>
 <hr>
 <div class="show-driver">
@@ -15,6 +21,7 @@
 </div>
 <h3>Race Results</h3>
 <div class="driver-results">
+    {% if results %}
     <table>
         <tr>
             <th>Race</th>
@@ -30,7 +37,10 @@
     <ul class="show-driver-stats">
         <h4><li>Total Wins: {{driver.wins}}</li></h4>    
         <h4><li>Total Podiums: {{driver.podiums}}</li></h4> 
-    </ul>   
+    </ul> 
+    {% else %}
+    <i>no results to show</i>
+    {% endif %}  
 </div>
 
 

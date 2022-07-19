@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block base %}
+    <style>
+    body {
+      background-image: url('../static/images/icon/icon.png');
+      background-size: 100%;
+      max-height: 100vw;
+    }
+    </style>
+    <div class="welcome">
+        <h1>TRACKSIDE</h1>
+    </div>
+    <div class="welcome-nav">
+            <a href="/drivers">Drivers</a>
+            <a href="/races">Races</a>
+    </div>    
+{% endblock base %}
