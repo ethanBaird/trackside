@@ -11,11 +11,11 @@
         <li>
             <div>
                 <h3>{{ race.location }}</a></h3>
-                <h3>{{ race.circuit }}</h3>
+                <h4>{{ race.circuit }}</h4>
                 {% if results %}
                 <ul class="top-three">
                     <li>
-                        <h4>
+                        <p>
                             {% for result in results %}
                                 {% if result.race.id == race.id and result.score.position == 1 %}
                                     1st - {{ result.driver.name }}
@@ -23,25 +23,25 @@
                                     {{ pass }}
                                 {% endif %}
                             {% endfor %}
-                        </h4>
+                        </p>
                     </li>
                     <li>
-                        <h5>
+                        <p>
                             {% for result in results %}
                                 {% if result.race.id == race.id and result.score.position == 2 %}
                                     2nd - {{ result.driver.name }}
                                 {% endif %}
                             {% endfor %}
-                        </h5>
+                        </p>
                     </li>
                     <li>
-                        <h5>
+                        <p>
                             {% for result in results %}
                                 {% if result.race.id == race.id and result.score.position == 3 %}
                                     3rd - {{ result.driver.name }}
                                 {% endif %}
                             {% endfor %}
-                        </h5>
+                        </p>
                     </li>
                     {% for result in results %}
                         {% if result.race.id == race.id and result.score.position == 1 %}
@@ -49,13 +49,10 @@
                         {% endif %}
                     {% endfor %}
                 {% endif %}
+                </ul>
             </div>
             <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
         </li>
-        {% endfor %}
-    </ul>
-    
-    
-    
-    
+        {% endfor %} 
+    </ul> 
 {% endblock content %}

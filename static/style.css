@@ -204,7 +204,7 @@ article a:hover {
 .races-list ul{
     display: flex;
     flex-direction: column;
-    color: #fff;
+    color: #2D2D2A;
     list-style: none;
     padding: 0px;
 }
@@ -213,11 +213,15 @@ article a:hover {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    background-color: #042c49;
-    color: #fff;
+    background-color: whitesmoke;
+    color: #2D2D2A;
     border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
+}
+
+.top-three a {
+    color: #2D2D2A;
 }
 
 .new-race-form {
@@ -235,11 +239,11 @@ article a:hover {
     text-align: left;
 }
 
-.top-three h4{
-    margin-top: 0px;
+.races-list h3 {
+    color: #ad0624;
 }
 
-.top-three h5{
+.top-three p {
     margin-top: 0px;
 }
 
