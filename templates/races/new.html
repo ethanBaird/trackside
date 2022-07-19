@@ -5,11 +5,11 @@
 <h2>Add Race</h2>
 <hr>
     <form action="/races/new" method="post" class="new-race-form">
-        <label for="race">Race</label>
-        <select name="race" id="race">
+        <label for="race_id">Race</label>
+        <select name="race_id" id="race_id">
             <option value="choose" disabled selected>choose a race</option>
             {% for race in races %}
-                <option value="{{race.location}}">{{ race.location }}</option>
+                <option value="{{race.id}}">{{ race.location }}</option>
             {% endfor %}
         </select>
 

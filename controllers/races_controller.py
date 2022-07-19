@@ -34,10 +34,9 @@ def new():
 # create '/races/new' method=['POST']
 @races_blueprint.route('/races/new', methods=['POST'])
 def create():
-    location = request.form['location']
-    circuit = request.form['circuit']
-    race = Race(location, circuit)
-    races_repository.save(race)
+    breakpoint()
+    id = request.form['race_id']
+    race = races_repository.select(id)
     
     # create result for each form option
     scores = scores_repository.select_all()
