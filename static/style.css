@@ -3,6 +3,10 @@ body {
     margin: 0;
 }
 
+hr {
+    color: #042c49;
+}
+
 button {
     font-family: 'Jost', sans-serif;
     color: #2D2D2A;
@@ -25,10 +29,15 @@ input {
 }
 
 header {
-    background-color: #FB3640;
+    background-color: #ad0624;
     color: #FFF;
     display: flex;
     padding: 0.5rem 1rem;
+}
+
+.icon {
+    border-radius: 50%;
+    margin-right: 1rem;
 }
 
 main {
@@ -36,8 +45,8 @@ main {
 }
 
 nav {
-    background-color: #2D2D2A;
-    width: 25%
+    background-color: #042c49;
+    width: 20%;
 }
 
 nav ul {
@@ -61,10 +70,12 @@ article {
     color: #2D2D2A;
     background-color: #fff;
     padding: 1rem;
+    width: 70%;
 }
 
 article h2 {
     margin-top: 0;
+    color:#ad0624
 }
 
 .drivers-list ul {
@@ -77,9 +88,9 @@ article h2 {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    background-color: #7C809B;
+    background-color: #042c49;
     color: #fff;
-    border: 1px solid #FB3640;
+    border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
 }
@@ -92,25 +103,33 @@ article h2 {
     padding: 0px;
 }
 
-.races-list li {
+.races-list > li {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    background-color: #7C809B;
+    background-color: #042c49;
     color: #fff;
-    border: 1px solid #FB3640;
+    border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
 }
 
+.top-three h4{
+    margin-top: 0px;
+}
+
+.top-three h5{
+    margin-top: 0px;
+}
+
 article a {
     text-decoration: none;
-    color: #2D2D2A;
+    color: #fff;
 }
 
 article a:hover {
     text-decoration: underline;
-    color: #FB3640;
+    color: #ad0624;
 }
 
 .driver-img {
@@ -126,10 +145,55 @@ article a:hover {
 
 
 footer {
-    background-color: #FB3640;
+    background-color: #ad0624;
 }
 
 .new-race-form {
     display: flex;
     flex-direction: column;
+}
+
+table {
+    table-layout: fixed;
+    width: auto 100%;
+    color: #2D2D2A;
+    border-collapse: collapse;
+    border: 3px solid #ad0624;
+}
+
+thead th:nth-child(1) {
+    width: 15%;
+}
+  
+thead th:nth-child(2) {
+    width: 50%;
+}
+  
+thead th:nth-child(3) {
+    width: 15%;
+}
+
+th, td {
+    padding: 16px;
+}
+
+caption {
+    text-align: left;
+}
+
+tbody td {
+    text-align: center;
+}
+
+thead {
+    background-color: #ad0624;
+    color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: whitesmoke;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
 }

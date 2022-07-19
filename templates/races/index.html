@@ -3,41 +3,46 @@
 {% block content %}
     <h2>Races</h2>
     <hr>
-    <div class="races-list">
-        <ul>
-            {% for race in races %}
-            <li>
-                <div>
-                    <h3>{{ race.location }}</a></h3>
-                    <h3>{{ race.circuit }}</h3>
-                    <h4>1st -  
-                        {% for result in results %}
-                            {% if result.race.id == race.id and result.score.position == 1 %}
-                                {{ result.driver.name }}
-                            {% endif %}
-                        {% endfor %}
-                    </h4>
-                    <h5>2nd - 
-                        {% for result in results %}
-                            {% if result.race.id == race.id and result.score.position == 2 %}
-                                {{ result.driver.name }}
-                            {% endif %}
-                        {% endfor %}
-                    </h5>
-                    <h5>3rd - 
-                        {% for result in results %}
-                            {% if result.race.id == race.id and result.score.position == 3 %}
-                                {{ result.driver.name }}
-                            {% endif %}
-                        {% endfor %}
-                    </h5>
-                    <b><a href="/races/{{race.id}}">see all results</a></b>
-                </div>
-                <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    <ul class="races-list">
+        {% for race in races %}
+        <li>
+            <div>
+                <h3>{{ race.location }}</a></h3>
+                <h3>{{ race.circuit }}</h3>
+                <ul class="top-three">
+                    <li>
+                        <h4>1st -  
+                            {% for result in results %}
+                                {% if result.race.id == race.id and result.score.position == 1 %}
+                                    {{ result.driver.name }}
+                                {% endif %}
+                            {% endfor %}
+                        </h4>
+                    </li>
+                    <li>
+                        <h5>2nd - 
+                            {% for result in results %}
+                                {% if result.race.id == race.id and result.score.position == 2 %}
+                                    {{ result.driver.name }}
+                                {% endif %}
+                            {% endfor %}
+                        </h5>
+                    </li>
+                    <li>
+                        <h5>3rd - 
+                            {% for result in results %}
+                                {% if result.race.id == race.id and result.score.position == 3 %}
+                                    {{ result.driver.name }}
+                                {% endif %}
+                            {% endfor %}
+                        </h5>
+                    </li>
+                <b><a href="/races/{{race.id}}">see all results</a></b>
+            </div>
+            <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
+        </li>
+        {% endfor %}
+    </ul>
     
     <form action="/races/new">
         <button type="submit">New Race</button>
