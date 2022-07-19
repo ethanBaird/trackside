@@ -3,13 +3,13 @@
 {% block base %}
 <body>
     <header>
-        <img src="{{ url_for('static', filename='images/icon/small_icon.png') }}" height="100px" width="100px" alt="icon" class="icon">
+        <img src="{{ url_for('static', filename='images/icon/small_icon.png') }}" alt="icon" class="icon">
         <h1>Trackside</h1>
     </header>
     <main>
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="/home">Home</a></li>
                 <li><a href="/drivers">Drivers</a></li>
                 <li><a href="/races">Races</a></li>
                 <li><a href="/standings">Standings</a></li>

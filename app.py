@@ -13,9 +13,9 @@ app.register_blueprint(races_blueprint)
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/index')
-def index():
-    return render_template('index.html')
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

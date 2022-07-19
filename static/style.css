@@ -41,13 +41,23 @@ input {
 
 .welcome {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: max-content;
     font-size: xx-large;
-    background-color: #FFF;
-    color: #ad0624;
+    color: #fff;
 }
+
+.welcome a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.welcome a:hover {
+    text-decoration: underline;
+}
+
 
 .welcome-nav {
     background-color: #fff;
@@ -55,17 +65,24 @@ input {
 }
 
 header {
-    background-color: #fff;
-    color: #ad0624;
+    background-color: #ad0624;
+    color: #fff;
     display: flex;
     align-items: center;
+    font-size: xx-large;
     padding: 0.5rem 1rem;
     border-bottom: 3px solid #ad0624;
 }
 
+header h1 {
+    margin: 0px
+}
+
 .icon {
     border-radius: 50%;
-    margin-right: 1rem;
+    margin-right: 3rem;
+    width: 10%;
+ 
 }
 
 .home-statement {
@@ -77,7 +94,7 @@ main {
 }
 
 nav {
-    background-color: #fff;
+    background-color: #042c49;
     border-right: 3px solid #ad0624;
     width: 20%;
 }
@@ -91,7 +108,7 @@ nav ul li {
 }
 
 nav a {
-    color: #ad0624;
+    color: #fff;
     text-decoration: none;
 }
 
