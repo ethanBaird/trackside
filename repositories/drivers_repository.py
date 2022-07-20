@@ -47,10 +47,10 @@ def select(id):
 def update(driver):
     sql = """
         UPDATE drivers
-        SET (name,constructor, points, wins, podiums) = (%s, %s, %s, %s, %s)
+        SET (name, constructor_id, points, wins, podiums) = (%s, %s, %s, %s, %s)
         WHERE id = %s
     """
-    values = [driver.name, driver.constructor, driver.points, driver.wins, driver.podiums, driver.id]
+    values = [driver.name, driver.constructor.id, driver.points, driver.wins, driver.podiums, driver.id]
     run_sql(sql, values)
 
 def delete(id):

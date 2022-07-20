@@ -8,9 +8,9 @@ class Driver:
         self.podiums = _podiums
         self.id = _id
 
-    def race(self, result):
+    def race(self, constructor, result):
         self.points += result.score.points
-        self.constructor.points += result.score.points
+        constructor.points += result.score.points
         if result.score.win:
             self.wins += 1
         if result.score.podium:

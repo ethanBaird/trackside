@@ -9,4 +9,6 @@ constructors_blueprint = Blueprint('constructors', __name__)
 def index():
     constructors = constructors_repository.select_all()
     drivers = drivers_repository.select_all()
+    constructors.sort(key=lambda x: x.points, reverse=True)
+    drivers.sort(key=lambda x: x.points, reverse=True)
     return render_template('constructors/index.html', constructors=constructors, drivers=drivers)

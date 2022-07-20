@@ -38,6 +38,15 @@ def select_all():
         constructors.append(constructor)
     return constructors
 
+def update(constructor):
+    sql = """
+        UPDATE constructors
+        SET (name, points) = (%s, %s)
+        WHERE id = %s
+    """
+    values = [constructor.name, constructor.points, constructor.id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = """
         DELETE FROM constructors

@@ -1,3 +1,4 @@
+from copyreg import constructor
 from flask import Flask, Blueprint, redirect, render_template, request
 
 from models.race import Race
@@ -30,7 +31,7 @@ def create():
     for score in scores:
         driver_id = request.form[f'p{position}']
         driver = drivers_repository.select(driver_id)
-        result = Result(score, driver, 'constructor', race)
+        result = Result(score, driver, driver.constructor, race)
         results_repository.save(result)
         position += 1
     return redirect('/races')
