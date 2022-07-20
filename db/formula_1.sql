@@ -27,13 +27,11 @@ CREATE TABLE drivers (
     podiums INT
 );
 
--- CREATE TABLE constructors(
---     id SERIAL PRIMARY KEY,
---     name VARCHAR(255),
---     driver1_id INT NOT NULL REFERENCES drivers(id),
---     driver2_id INT NOT NULL REFERENCES drivers(id),
---     points INT
--- );
+CREATE TABLE constructors(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    points INT
+);
 
 CREATE TABLE results(
     id SERIAL PRIMARY KEY,
