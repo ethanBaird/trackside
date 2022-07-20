@@ -9,11 +9,11 @@ import repositories.races_repository as races_repository
 
 def save(result):
     sql = """
-        INSERT INTO results (score_id, driver_id, constructor, race_id)
+        INSERT INTO results (score_id, driver_id, constructor_id, race_id)
         VALUES (%s, %s, %s, %s)
         RETURNING id
     """
-    values = [result.score.id, result.driver.id, result.constructor, result.race.id]
+    values = [result.score.id, result.driver.id, result.constructor.id, result.race.id]
     results = run_sql(sql, values)
     id = results[0]["id"]
     result.id = id

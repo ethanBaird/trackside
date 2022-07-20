@@ -4,11 +4,11 @@ from models.driver import Driver
 
 def save(driver):
     sql = """
-        INSERT INTO drivers (name, constructor, points, wins, podiums)
+        INSERT INTO drivers (name, constructor_id, points, wins, podiums)
         VALUES (%s, %s, %s, %s, %s)
         RETURNING id
     """
-    values = [driver.name, driver.constructor, driver.points, driver.wins, driver.podiums]
+    values = [driver.name, driver.constructor.id, driver.points, driver.wins, driver.podiums]
     results = run_sql(sql, values)
     id = results[0]["id"]
     driver.id = id

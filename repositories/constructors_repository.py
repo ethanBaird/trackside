@@ -11,3 +11,9 @@ def save(constructor):
     id = results[0]["id"]
     
     constructor.id = id
+
+def delete_all():
+    sql = """
+        DELETE FROM constructors
+    """
+    run_sql(sql)
