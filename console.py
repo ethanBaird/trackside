@@ -39,7 +39,7 @@ c4 = Constructor('Mclaren', 0)
 c5 = Constructor('Alpine', 0)
 c6 = Constructor('Aston Martin', 0)
 c7 = Constructor('Haas', 0)
-c8 = Constructor('Willaims', 0)
+c8 = Constructor('Williams', 0)
 c9 = Constructor('Alfa Romeo', 0)
 c10 = Constructor('AlphaTauri', 0)
 
