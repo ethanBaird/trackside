@@ -1,20 +1,20 @@
 /* General CSS */
 
 body {
-    font-family: 'Jost', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
 hr {
-    color: #042c49;
+    color: #0D3B66;
 }
 
 button {
     background: none!important;
     border: none;
     padding: 0!important;
-    font-family: 'Jost', sans-serif;
-    color: #ad0624;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FE2A3C;
     text-decoration: none;
 }
 
@@ -24,17 +24,18 @@ button:hover {
 }
 
 select {
-    font-family: 'Jost', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #2D2D2A;
+    width: 147px;
 }
 
 option {
-    font-family: 'Jost', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #2D2D2A;
 }
 
 input {
-    font-family: 'Jost', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #2D2D2A;
 }
 
@@ -48,6 +49,7 @@ input {
     height: max-content;
     font-size: xx-large;
     color: #fff;
+    text-shadow: 0 0 8px #2D2D2A;
 }
 
 .welcome a {
@@ -62,17 +64,18 @@ input {
 /* main index CSS */
 
 header {
-    background-color: #ad0624;
+    background-color: #FE2A3C;
     color: #fff;
     display: flex;
     align-items: center;
     font-size: xx-large;
     padding: 0.5rem 1rem;
-    border-bottom: 3px solid #ad0624;
+    border-bottom: 3px solid #FE2A3C;
 }
 
 header h1 {
-    margin: 0px
+    margin: 0px;
+    text-shadow: 0 0 8px #2D2D2A;
 }
 
 .icon {
@@ -87,10 +90,9 @@ main {
 }
 
 nav {
-    background-color: #042c49;
-    border-right: 3px solid #ad0624;
+    background-color: #0D3B66;
+    border-right: 3px solid #FE2A3C;
     width: 20%;
-    box-shadow: 0 0 16px #042c499a;
 }
 
 nav ul {
@@ -119,7 +121,7 @@ article {
 
 article h2 {
     margin: 0.5rem 0rem;
-    color:#ad0624
+    color:#FE2A3C;
 }
 
 article a {
@@ -130,7 +132,7 @@ article a {
 
 article a:hover {
     text-decoration: underline;
-    color: #ad0624;
+    color: #FE2A3C;
 }
 
 /* Home CSS */
@@ -142,11 +144,12 @@ article a:hover {
 .news-list li {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: white;
     color: #2D2D2A;
-    border: 1px solid #ad0624;
+    border: 1px solid #FE2A3C;
     border-radius: 5px;
     padding: 0px 16px;
     box-shadow: 0 0 16px #042c499a;
@@ -157,7 +160,7 @@ article a:hover {
 }
 
 .news-item h3 {
-    color: #ad0624;
+    color: #FE2A3C;
 }
 
 .news-item img {
@@ -185,7 +188,7 @@ article a:hover {
     margin-top: 1rem;
     background-color: whitesmoke;
     color: #2D2D2A;
-    border: 1px solid #ad0624;
+    border: 1px solid #FE2A3C;
     border-radius: 5px;
     padding: 0px 16px;
     box-shadow: 0 0 16px #042c499a;
@@ -202,7 +205,7 @@ article a:hover {
 }
 
 .show-driver-header a {
-    color: #ad0624;
+    color: #FE2A3C;
 }
 
 .show-driver {
@@ -240,7 +243,7 @@ article a:hover {
     margin-bottom: 1rem;
     background-color: white;
     color: #2D2D2A;
-    border: 1px solid #ad0624;
+    border: 1px solid #FE2A3C;
     border-radius: 5px;
     padding: 0px 16px;
     box-shadow: 0 0 16px #042c499a;
@@ -289,7 +292,7 @@ article a:hover {
 }
 
 .races-list-header a {
-    color: #ad0624;
+    color: #FE2A3C;
 }
 
 .races-list ul {
@@ -306,7 +309,7 @@ article a:hover {
     margin-top: 1rem;
     background-color: whitesmoke;
     color: #2D2D2A;
-    border: 1px solid #ad0624;
+    border: 1px solid #FE2A3C;
     border-radius: 5px;
     padding: 0px 16px;
     box-shadow: 0 0 16px #042c499a;
@@ -332,7 +335,7 @@ article a:hover {
 }
 
 .races-list h3 {
-    color: #ad0624;
+    color: #FE2A3C;
 }
 
 .top-three p {
@@ -348,7 +351,7 @@ article a:hover {
 /* footer css */
 
 footer {
-    background-color: #ad0624;
+    background-color: #FE2A3C;
 }
 
 /* all tables CSS */
@@ -358,7 +361,7 @@ table {
     width: auto 100%;
     color: #2D2D2A;
     border-collapse: collapse;
-    border: 3px solid #ad0624;
+    border: 3px solid #FE2A3C;
     box-shadow: 0 0 16px #042c499a;
 }
 
@@ -399,7 +402,7 @@ tbody td {
 }
 
 thead {
-    background-color: #ad0624;
+    background-color: #FE2A3C;
     color: #fff;
 }
 
@@ -408,7 +411,7 @@ tbody tr:hover {
 }
 
 table select {
-    width: 127px;
+    width: 147px;
 }
 
 table a {

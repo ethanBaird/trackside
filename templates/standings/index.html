@@ -1,18 +1,18 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Standings</h2>
+    <h2>standings</h2>
     <hr>
         <table>
-            <caption><h3>Driver's Championship</h3></caption>
+            <caption><h3>driver's championship</h3></caption>
             <thead>
                 <tr>
-                    <th>Positon</th>
-                    <th>Driver</th>
+                    <th>positon</th>
+                    <th>driver</th>
                     <th></th>
-                    <th>Points</th>
-                    <th>Wins</th>
-                    <th>Podiums</th>
+                    <th>points</th>
+                    <th>wins</th>
+                    <th>podiums</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,23 +29,28 @@
             </tbody>
             
         </table> 
+        <br>
         <table>
-            <caption><h3>Constructor's Championship</h3></caption>
+            <caption><h3>constructor's championship</h3></caption>
             <thead>
                 <tr>
-                    <th>Positon</th>
-                    <th>Constructor</th>
+                    <th>positon</th>
+                    <th>constructor</th>
                     <th></th>
-                    <th>Points</th>
+                    <th></th>
+                    <th>points</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 {% for constructor in constructors %}
                 <tr>
-                    <td>{{ constructors.index(constructor)+1 }}</td>    
+                    <td>{{ constructors.index(constructor)+1 }}</td>       
                     <td><b>{{ constructor.name }}</b></td>
                     <td><a href="/constructors/{{constructor.id}}"><img src="static/images/constructors/{{constructor.name}}.png" alt="Image of {{constructor.name}} logo" class="constructor-img"></a></td>
+                    <td></td>
                     <td><b>{{ constructor.points }}</b></td>
+                    <td></td>
                 </tr>
                 {% endfor %}
             </tbody>

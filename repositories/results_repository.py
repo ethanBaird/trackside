@@ -19,10 +19,10 @@ def save(result):
     results = run_sql(sql, values)
     id = results[0]["id"]
     result.id = id
+
     # adds result to driver
     driver = drivers_repository.select(result.driver.id)
     constructor = constructors_repository.select(result.constructor.id)
-
     driver.race(constructor, result)
     
     # saves change to db

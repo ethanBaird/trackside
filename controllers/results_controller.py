@@ -24,8 +24,10 @@ def create():
     # gets race details from form
     id = request.form['race_id']
     race = races_repository.select(id)
+
     # gets scoring info from scores table
     scores = scores_repository.select_all()
+    
     # for each possible score outcome creates and saves a result
     position = 1
     for score in scores:

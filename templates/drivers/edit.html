@@ -1,16 +1,17 @@
 {% extends 'index.html' %}
 
 {% block content %}
-<h2>Edit - {{driver.name}}</h2>
+<h2>edit - {{driver.name}}</h2>
+<hr>
     <form action="/drivers/{{driver.id}}/edit" method="post">
         <table>
         <tr>
-            <td><label for="name">Name:</label></td>
+            <td><label for="name">name:</label></td>
             <td><input value="{{driver.name}}" type="text" name="name" id="name"></td>
         </tr>
 
         <tr>
-            <td><label for="constructor_id">Constructor:</label></td>
+            <td><label for="constructor_id">constructor:</label></td>
             <td>
                 <select name="constructor_id" id="constructor-_id">
                     {% for constructor in constructors %}
@@ -24,20 +25,20 @@
             </td>
         </tr>
         <tr>
-            <td><label for="points">Points:</label></td>
+            <td><label for="points">points:</label></td>
             <td><input value="{{driver.points}}" type="text" name="points" id="points"></td>
         </tr>     
         <tr>
-            <td><label for="wins">Wins:</label></td>
+            <td><label for="wins">wins:</label></td>
             <td><input value="{{driver.wins}}" type="text" name="wins" id="wins"></td>
         </tr>   
         <tr>
-            <td><label for="podiums">Podiums:</label></td>
+            <td><label for="podiums">podiums:</label></td>
             <td><input value="{{driver.podiums}}" type="text" name="podiums" id="podiums"></td>
         </tr>
         </table>
             
         <br>
-        <button type="submit">Edit Driver</button>
+        <button type="submit">submit</button>
     </form>
 {% endblock content %}
