@@ -23,4 +23,24 @@
             </tbody>
             
         </table> 
+        <table>
+            <caption><h3>Constructor's Championship</h3></caption>
+            <thead>
+                <tr>
+                    <th>Positon</th>
+                    <th>Constructor</th>
+                    <th>Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for constructor in constructors %}
+                <tr>
+                    <td>{{ constructors.index(constructor)+1 }}</td>    
+                    <td><b>{{ constructor.name }}</b></td>
+                    <td>{{ constructor.points }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table> 
 {% endblock content %}

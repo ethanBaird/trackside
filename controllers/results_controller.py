@@ -1,4 +1,3 @@
-from copyreg import constructor
 from flask import Flask, Blueprint, redirect, render_template, request
 
 from models.race import Race
@@ -7,6 +6,7 @@ import repositories.races_repository as races_repository
 import repositories.drivers_repository as drivers_repository
 import repositories.scores_repository as scores_repository
 import repositories.results_repository as results_repository
+import repositories.constructors_repository as constructors_repository
 
 results_blueprint = Blueprint('results', __name__)
 
@@ -35,3 +35,13 @@ def create():
         results_repository.save(result)
         position += 1
     return redirect('/races')
+
+# standings
+@results_blueprint.route('/standings')
+def standings():
+    positions = range(1, 20)
+    drivers = drivers_repository.select_all()
+    drivers.sort(key=lambda x: x.points, reverse=True)
+    constructors = constructors_repository.select_all()
+    constructors.sort(key=lambda x: x.points, reverse=True)
+    return render_template('standings/index.html', positions=positions, drivers=drivers, constructors=constructors)

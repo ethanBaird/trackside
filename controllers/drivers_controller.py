@@ -61,10 +61,3 @@ def delete(id):
     drivers_repository.delete(id)
     return redirect('/drivers')
 
-# standings
-@drivers_blueprint.route('/standings')
-def standings():
-    positions = range(1, 20)
-    drivers = drivers_repository.select_all()
-    drivers.sort(key=lambda x: x.points, reverse=True)
-    return render_template('standings/index.html', positions=positions, drivers=drivers)
