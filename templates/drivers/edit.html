@@ -10,8 +10,18 @@
         </tr>
 
         <tr>
-            <td><label for="constructor">Constructor:</label></td>
-            <td><input value ={{driver.constructor}} type="text" name="constructor" id="constructor"></td>
+            <td><label for="constructor_id">Constructor:</label></td>
+            <td>
+                <select name="constructor_id" id="constructor-_id">
+                    {% for constructor in constructors %}
+                        <option value="{{constructor.id}}"
+                        {% if constructor.id == driver.constructor.id %}
+                            selected
+                        {% endif %}>
+                        {{constructor.name}}</option>    
+                    {% endfor %}
+                </select>
+            </td>
         </tr>
         <tr>
             <td><label for="points">Points:</label></td>
