@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from models.constructor import Constructor
 
 def save(constructor):
     sql = """
@@ -11,6 +12,31 @@ def save(constructor):
     id = results[0]["id"]
     
     constructor.id = id
+
+def select(id):
+    sql = """
+        SELECT * FROM constructors
+        WHERE id = %s
+    """
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        constructor = Constructor(result['name'], result['points'], result['id'])
+    return constructor
+
+def select_all():
+    constructors = []
+    sql = """
+        SELECT * FROM constructors
+    """
+    results = run_sql(sql)
+
+    for row in results:
+        constructor = Constructor(row['name'], row['points'], row['id'])
+        constructors.append(constructor)
+    return constructors
 
 def delete_all():
     sql = """

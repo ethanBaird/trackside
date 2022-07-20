@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="show-driver-header">
-    <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
+    <h2>{{ driver.name }} - {{ driver.constructor.name }}</h2>
     <div>
         <a href="/drivers/{{driver.id}}/edit">Edit</a>
         <form action="/drivers/{{driver.id}}/delete" method="post">
