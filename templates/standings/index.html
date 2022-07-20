@@ -9,15 +9,21 @@
                 <tr>
                     <th>Positon</th>
                     <th>Driver</th>
+                    <th></th>
                     <th>Points</th>
+                    <th>Wins</th>
+                    <th>Podiums</th>
                 </tr>
             </thead>
             <tbody>
                 {% for driver in drivers %}
                 <tr>
                     <td>{{ drivers.index(driver)+1 }}</td>    
-                    <td><b>{{ driver.name }}</b></td>
-                    <td>{{ driver.points }}</td>
+                    <td><b><a href="/drivers/{{driver.id}}">{{ driver.name }}</a></b></td>
+                    <td><a href="/constructors/{{driver.constructor.id}}"><img src="static/images/constructors/{{driver.constructor.name}}.png" alt="Image of {{driver.constructor.name}} logo" class="constructor-img"></a></td>
+                    <td><b>{{ driver.points }}</b></td>
+                    <td>{{ driver.wins }}</td>
+                    <td>{{ driver.podiums }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -29,6 +35,7 @@
                 <tr>
                     <th>Positon</th>
                     <th>Constructor</th>
+                    <th></th>
                     <th>Points</th>
                 </tr>
             </thead>
@@ -37,7 +44,8 @@
                 <tr>
                     <td>{{ constructors.index(constructor)+1 }}</td>    
                     <td><b>{{ constructor.name }}</b></td>
-                    <td>{{ constructor.points }}</td>
+                    <td><a href="/constructors/{{constructor.id}}"><img src="static/images/constructors/{{constructor.name}}.png" alt="Image of {{constructor.name}} logo" class="constructor-img"></a></td>
+                    <td><b>{{ constructor.points }}</b></td>
                 </tr>
                 {% endfor %}
             </tbody>

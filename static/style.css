@@ -90,6 +90,7 @@ nav {
     background-color: #042c49;
     border-right: 3px solid #ad0624;
     width: 20%;
+    box-shadow: 0 0 16px #042c499a;
 }
 
 nav ul {
@@ -134,9 +135,41 @@ article a:hover {
 
 /* Home CSS */
 
-.home-statement {
-    font-size: xx-large;
+.news-list ul {
+    color: #fff
 }
+
+.news-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    color: #2D2D2A;
+    border: 1px solid #ad0624;
+    border-radius: 5px;
+    padding: 0px 16px;
+    box-shadow: 0 0 16px #042c499a;
+}
+
+.news-item {
+    padding: 1rem;
+}
+
+.news-item h3 {
+    color: #ad0624;
+}
+
+.news-item img {
+    padding: 1rem;
+}
+
+.news-item li {
+    border: none;
+    box-shadow: none;
+}
+
+
 
 /* drivers CSS */
 
@@ -155,6 +188,7 @@ article a:hover {
     border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
+    box-shadow: 0 0 16px #042c499a;
 }
 
 .drivers-list a {
@@ -203,11 +237,13 @@ article a:hover {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    background-color: whitesmoke;
+    margin-bottom: 1rem;
+    background-color: white;
     color: #2D2D2A;
     border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
+    box-shadow: 0 0 16px #042c499a;
 }
 
 .constructor-info {
@@ -235,6 +271,8 @@ article a:hover {
 #constructor-driver {
     display: flex;
     border: none;
+    box-shadow: none;
+    margin-bottom: 0px;
 }
 
 .constructor-img {
@@ -271,6 +309,7 @@ article a:hover {
     border: 1px solid #ad0624;
     border-radius: 5px;
     padding: 0px 16px;
+    box-shadow: 0 0 16px #042c499a;
 }
 
 .top-three a {
@@ -320,6 +359,7 @@ table {
     color: #2D2D2A;
     border-collapse: collapse;
     border: 3px solid #ad0624;
+    box-shadow: 0 0 16px #042c499a;
 }
 
 thead th:nth-child(1) {
@@ -331,6 +371,18 @@ thead th:nth-child(2) {
 }
   
 thead th:nth-child(3) {
+    width: 15%;
+}
+
+thead th:nth-child(4) {
+    width: 15%;
+}
+
+thead th:nth-child(5) {
+    width: 15%;
+}
+
+thead th:nth-child(6) {
     width: 15%;
 }
 
@@ -351,14 +403,14 @@ thead {
     color: #fff;
 }
 
-tbody tr:nth-child(odd) {
+tbody tr:hover {
     background-color: whitesmoke;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #fff;
 }
 
 table select {
     width: 127px;
+}
+
+table a {
+    color: #2D2D2A;
 }
