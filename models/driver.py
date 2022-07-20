@@ -10,6 +10,7 @@ class Driver:
 
     def race(self, result):
         self.points += result.score.points
+        self.constructor.points += result.score.points
         if result.score.win:
             self.wins += 1
         if result.score.podium:
