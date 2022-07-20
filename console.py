@@ -3,10 +3,12 @@ from models.driver import Driver
 from models.race import Race
 from models.result import Result
 from models.score import Score
+from models.constructor import Constructor
 import repositories.drivers_repository as driver_repository
 import repositories.races_repository as races_repository
 import repositories.scores_repository as scores_repository
 import repositories.results_repository as results_repository
+import repositories.constructors_repository as constructors_repository
 
 results_repository.delete_all()
 scores_repository.delete_all()
@@ -77,5 +79,8 @@ r10 = Race('Great Britain', 'Silverstone Circuit')
 races = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10]
 for race in races:
     races_repository.save(race)
+
+c1 = Constructor('Ferrari', 0)
+constructors_repository.save(c1)
 
 pdb.set_trace()
