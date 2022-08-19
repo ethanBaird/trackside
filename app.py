@@ -17,9 +17,9 @@ app.register_blueprint(constructors_blueprint)
 def welcome():
     return render_template('welcome.html')
 
-@app.route('/home')
+@app.route('/news')
 def home():
-    return render_template('home.html')
+    return render_template('news/index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

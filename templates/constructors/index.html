@@ -1,5 +1,30 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    Constructors List to go here
+    <h2>constructors</h2>
+    <hr>
+    <ul class="constructors-list">
+        {% for constructor in constructors %}
+            <li class="constructor-info">
+                <div class="constructor-info-header">
+                    <h3>
+                        <a href="/constructors/{{constructor.id}}">{{ constructor.name }}</a> - {{ constructor.points }}pts
+                    </h3>
+                    
+                    <img src="static/images/constructors/{{constructor.name}}.png" alt="Image of {{constructor.name}} logo" class="constructor-img">    
+                </div>
+                <ul class="constructor-drivers-list">
+                {% for driver in drivers %}
+                {% if driver.constructor.name == constructor.name %}
+                
+                    <li id="constructor-driver">
+                        <p><a href="/drivers/{{driver.id}}">{{ driver.name }}</a></p>
+                        <img src="static/images/drivers/{{driver.name}}.png" alt="Image of {{driver.name}} logo" class="driver-img">
+                    </li>
+                {% endif %}
+                {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock content %}

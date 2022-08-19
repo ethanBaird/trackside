@@ -2,8 +2,8 @@
 
 {% block content %}
     <div class="races-list-header">
-        <h2>Races</h2>
-        <a href="/results/new">Add Race Results</a>
+        <h2>races</h2>
+        <a href="/results/new">add race results</a>
     </div>
     <hr>
     <ul class="races-list">
@@ -48,8 +48,8 @@
                             <b><a href="/races/{{race.id}}">see full results</a></b>
                         {% endif %}
                     {% endfor %}
-                {% endif %}
                 </ul>
+                {% endif %}
             </div>
             <img src="static/images/circuits/{{race.location}}.png" alt="Image of {{race.circuit}}" class="race-img">
         </li>

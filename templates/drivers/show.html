@@ -2,24 +2,24 @@
 
 {% block content %}
 <div class="show-driver-header">
-    <h2>{{ driver.name }} - {{ driver.constructor }}</h2>
+    <h2>{{ driver.name }} - {{ driver.constructor.name }}</h2>
     <div>
-        <a href="/drivers/{{driver.id}}/edit">Edit</a>
+        <a href="/drivers/{{driver.id}}/edit">edit</a>
         <form action="/drivers/{{driver.id}}/delete" method="post">
-            <button type="submit">Delete</button>
+            <button type="submit">delete</button>
         </form> 
     </div>
 </div>
 <hr>
 <div class="show-driver">
     <div class="driver-profile">
-    <h3>Profile</h3>
+    <h3>profile</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias velit provident sint asperiores sequi eos id incidunt impedit eum? Autem sed, minima molestiae facilis quisquam inventore sit optio. Quas, ex.</p>
     
     </div>
     <img src="../../static/images/drivers/{{driver.name}}.png" alt="Image of {{driver.name}}" class="driver-img">
 </div>
-<h3>Race Results</h3>
+<h3>season results</h3>
 <div class="driver-results">
     {% if results %}
     <table>

@@ -1,23 +1,56 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h2>Standings</h2>
+    <h2>standings</h2>
     <hr>
         <table>
-            <caption><h3>Driver's Championship</h3></caption>
+            <caption><h3>driver's championship</h3></caption>
             <thead>
                 <tr>
-                    <th>Positon</th>
-                    <th>Driver</th>
-                    <th>Points</th>
+                    <th>positon</th>
+                    <th>driver</th>
+                    <th></th>
+                    <th>points</th>
+                    <th>wins</th>
+                    <th>podiums</th>
                 </tr>
             </thead>
             <tbody>
                 {% for driver in drivers %}
                 <tr>
                     <td>{{ drivers.index(driver)+1 }}</td>    
-                    <td><b>{{ driver.name }}</b></td>
-                    <td>{{ driver.points }}</td>
+                    <td><b><a href="/drivers/{{driver.id}}">{{ driver.name }}</a></b></td>
+                    <td><a href="/constructors/{{driver.constructor.id}}"><img src="static/images/constructors/{{driver.constructor.name}}.png" alt="Image of {{driver.constructor.name}} logo" class="constructor-img"></a></td>
+                    <td><b>{{ driver.points }}</b></td>
+                    <td>{{ driver.wins }}</td>
+                    <td>{{ driver.podiums }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table> 
+        <br>
+        <table>
+            <caption><h3>constructor's championship</h3></caption>
+            <thead>
+                <tr>
+                    <th>positon</th>
+                    <th>constructor</th>
+                    <th></th>
+                    <th></th>
+                    <th>points</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for constructor in constructors %}
+                <tr>
+                    <td>{{ constructors.index(constructor)+1 }}</td>       
+                    <td><b>{{ constructor.name }}</b></td>
+                    <td><a href="/constructors/{{constructor.id}}"><img src="static/images/constructors/{{constructor.name}}.png" alt="Image of {{constructor.name}} logo" class="constructor-img"></a></td>
+                    <td></td>
+                    <td><b>{{ constructor.points }}</b></td>
+                    <td></td>
                 </tr>
                 {% endfor %}
             </tbody>

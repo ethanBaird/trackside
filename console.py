@@ -34,8 +34,17 @@ for score in scores:
 
 c1 = Constructor('Ferrari', 0)
 c2 = Constructor('Red Bull', 0)
+c3 = Constructor('Mercedes', 0)
+c4 = Constructor('Mclaren', 0)
+c5 = Constructor('Alpine', 0)
+c6 = Constructor('Aston Martin', 0)
+c7 = Constructor('Haas', 0)
+c8 = Constructor('Williams', 0)
+c9 = Constructor('Alfa Romeo', 0)
+c10 = Constructor('AlphaTauri', 0)
 
-constructors = [c1, c2]
+
+constructors = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10]
 for constructor in constructors:
     constructors_repository.save(constructor)
 
@@ -46,31 +55,31 @@ d2 = Driver("Carlos Sainz", c1, 0, 0, 0)
 d3 = Driver("Max Verstappen", c2, 0, 0, 0)
 d4 = Driver("Sergio Perez", c2, 0, 0, 0)
 #mercedes
-# d5 = Driver('Lewis Hamilton', 'Mercedes-AMG', 0, 0, 0)
-# d6 = Driver("George Russell", "Mercedes-AMG", 0, 0, 0)
-# #mclaren
-# d7 = Driver('Lando Norris', 'McLaren', 0, 0, 0)
-# d8 = Driver('Daniel Ricciardo', 'McLaren', 0, 0, 0)
-# #alpine
-# d9 = Driver("Fernando Alonso", 'Alpine', 0, 0, 0)
-# d10 = Driver("Esteban Ocon", 'Alpine', 0, 0, 0)
-# #astonmartin
-# d11 = Driver("Sebastian Vettel", 'Aston Martin', 0, 0, 0)
-# d12 = Driver("Lance Stroll", 'Aston Martin', 0, 0, 0)
-# #haas
-# d13 = Driver("Mick Schumacher", 'Haas', 0, 0, 0)
-# d14 = Driver("Kevin Magnussen", 'Haas', 0, 0, 0)
-# #williams
-# d15 = Driver("Nicholas Latifi", 'Williams', 0, 0, 0)
-# d16 = Driver("Alex Albon", 'Williams', 0, 0, 0)
-# #alfaromeo
-# d17 = Driver("Valtteri Bottas", 'Alfa Romeo', 0, 0, 0)
-# d18 = Driver("Zhou Guanyou", 'Alfa Romeo', 0, 0, 0)
-# #alphatauri
-# d19 = Driver("Pierre Gasly", 'AlphaTauri', 0, 0, 0)
-# d20 = Driver("Yuki Tsunoda", 'AlphaTauri', 0, 0, 0)
+d5 = Driver('Lewis Hamilton', c3, 0, 0, 0)
+d6 = Driver("George Russell", c3, 0, 0, 0)
+#mclaren
+d7 = Driver('Lando Norris', c4, 0, 0, 0)
+d8 = Driver('Daniel Ricciardo', c4, 0, 0, 0)
+#alpine
+d9 = Driver("Fernando Alonso", c5, 0, 0, 0)
+d10 = Driver("Esteban Ocon", c5, 0, 0, 0)
+#astonmartin
+d11 = Driver("Sebastian Vettel", c6, 0, 0, 0)
+d12 = Driver("Lance Stroll", c6, 0, 0, 0)
+#haas
+d13 = Driver("Mick Schumacher", c7, 0, 0, 0)
+d14 = Driver("Kevin Magnussen", c7, 0, 0, 0)
+#williams
+d15 = Driver("Nicholas Latifi", c8, 0, 0, 0)
+d16 = Driver("Alex Albon", c8, 0, 0, 0)
+#alfaromeo
+d17 = Driver("Valtteri Bottas", c9, 0, 0, 0)
+d18 = Driver("Zhou Guanyou", c9, 0, 0, 0)
+#alphatauri
+d19 = Driver("Pierre Gasly", c10, 0, 0, 0)
+d20 = Driver("Yuki Tsunoda", c10, 0, 0, 0)
 
-drivers = [d1, d2, d3, d4] #d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20]
+drivers = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20]
 for driver in drivers:
     driver_repository.save(driver)
 

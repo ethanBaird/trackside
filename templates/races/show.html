@@ -8,6 +8,7 @@
             <tr>
                 <th>Positon</th>
                 <th>Driver</th>
+                <th></th>
                 <th>Points</th>
             </tr>
         </thead>
@@ -16,7 +17,8 @@
             <tr>
                 <td>{{ result.score.position }}</td>
                 <td><b>{{ result.driver.name }}</b></td>
-                <td>{{ result.score.points }}</td>
+                <td><a href="/constructors/{{result.constructor.id}}"><img src="../../static/images/constructors/{{result.constructor.name}}.png" alt="Image of {{result.constructor.name}} logo" class="constructor-img"></a></td>
+                <td><b>{{ result.score.points }}</b></td>
             </tr>
             {% endfor %}
         </tbody>

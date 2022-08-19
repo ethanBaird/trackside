@@ -1,6 +1,9 @@
 
+from copyreg import constructor
 from db.run_sql import run_sql
 from models.driver import Driver
+
+import repositories.constructors_repository as constructors_repository
 
 def save(driver):
     sql = """
@@ -22,7 +25,8 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        driver = Driver(row['name'], row['constructor'], row['points'], row['wins'], row['podiums'], row['id'])
+        constructor = constructors_repository.select(row['constructor_id'])
+        driver = Driver(row['name'], constructor, row['points'], row['wins'], row['podiums'], row['id'])
         drivers.append(driver)
     return drivers
 
@@ -36,16 +40,17 @@ def select(id):
 
     if results:
         result = results[0]
-        driver = Driver(result['name'], result['constructor'], result['points'], result['wins'], result['podiums'], result['id'])
+        constructor = constructors_repository.select(result['constructor_id'])
+        driver = Driver(result['name'], constructor, result['points'], result['wins'], result['podiums'], result['id'])
     return driver
 
 def update(driver):
     sql = """
         UPDATE drivers
-        SET (name,constructor, points, wins, podiums) = (%s, %s, %s, %s, %s)
+        SET (name, constructor_id, points, wins, podiums) = (%s, %s, %s, %s, %s)
         WHERE id = %s
     """
-    values = [driver.name, driver.constructor, driver.points, driver.wins, driver.podiums, driver.id]
+    values = [driver.name, driver.constructor.id, driver.points, driver.wins, driver.podiums, driver.id]
     run_sql(sql, values)
 
 def delete(id):

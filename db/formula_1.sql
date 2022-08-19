@@ -36,7 +36,7 @@ CREATE TABLE drivers (
 CREATE TABLE results(
     id SERIAL PRIMARY KEY,
     score_id INT NOT NULL REFERENCES scores(id), 
-    driver_id INT NOT NULL REFERENCES drivers(id), 
+    driver_id INT NOT NULL REFERENCES drivers(id) ON DELETE CASCADE, 
     constructor_id INT NOT NULL REFERENCES constructors(id),
     race_id INT NOT NULL REFERENCES races(id) 
 );

@@ -1,8 +1,10 @@
+from copyreg import constructor
 from flask import Flask, Blueprint, redirect, render_template, request
 from models.driver import Driver
 
 import repositories.drivers_repository as drivers_repository
 import repositories.results_repository as results_repository
+import repositories.constructors_repository as constructors_repository
 
 drivers_blueprint = Blueprint("drivers", __name__)
 
@@ -41,13 +43,14 @@ def create():
 @drivers_blueprint.route('/drivers/<id>/edit')
 def edit(id):
     driver = drivers_repository.select(id)
-    return render_template('drivers/edit.html', driver=driver)
+    constructors = constructors_repository.select_all()
+    return render_template('drivers/edit.html', driver=driver, constructors=constructors)
 
 # update 'drivers/<id> method ['POST']
 @drivers_blueprint.route('/drivers/<id>/edit', methods=['POST'])
 def update(id):
     name = request.form['name']
-    constructor = request.form['constructor']
+    constructor = constructors_repository.select(request.form['constructor_id'])
     points = request.form['points']
     wins = request.form['wins']
     podiums = request.form['podiums']
@@ -58,13 +61,7 @@ def update(id):
 # delete 'drivers/<id>/delete
 @drivers_blueprint.route('/drivers/<id>/delete', methods=['POST'])
 def delete(id):
+
     drivers_repository.delete(id)
     return redirect('/drivers')
 
-# standings
-@drivers_blueprint.route('/standings')
-def standings():
-    positions = range(1, 20)
-    drivers = drivers_repository.select_all()
-    drivers.sort(key=lambda x: x.points, reverse=True)
-    return render_template('standings/index.html', positions=positions, drivers=drivers)
