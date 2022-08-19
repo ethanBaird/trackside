@@ -1,21 +1,21 @@
-#trackside
+# trackside
 F1 flask app
 
 After 4 weeks at CodeClan we undertook our first project. Working independently we were to create a flask application that allows a user to perform simple CRUD actions. I decided to work to design a sports scoring tracker for Formula 1, following this brief.
 
-##MVP
+### MVP
 
 the app should allow the user to view drivers, teams and some information about them
 there should be a way to display race results and see season results for a particular driver
 the app should display the current standings
 
-##Extensions
+### Extensions
 the user should be able to add race results
 all relevant information should update when a race result is submitted
 
 What follows are instructions on how to run this application
 
-#Try it yourself!
+## Try it yourself!
 
 You'll need python3, postgreSQL and flask installed to run this.
 
