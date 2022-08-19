@@ -98,7 +98,18 @@ races = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10]
 for race in races:
     races_repository.save(race)
 
+res1 = Result(p1, d1, c1, r1)
+res2 = Result(p2, d2, c1, r1)
+res3 = Result(p3, d5, c3, r1)
+res4 = Result(p4, d6, c3, r1)
+res5 = Result(p5, d14, c7, r1)
+res6 = Result(p6, d17, c9, r1)
+res7 = Result(p7, d10, c5, r1)
+res8 = Result(p8, d20, c10, r1)
+res9 = Result(p9, d9, c5, r1)
+res10 = Result(p10, d18, c9, r1)
 
+results = [res1, res2, res3, res4, res5, res6, res7, res8, res9, res10]
+for result in results:
+    results_repository.save(result)
 
-
-pdb.set_trace()
