@@ -1,5 +1,5 @@
 # trackside
-F1 flask app
+### A Formula 1 Flask App
 
 After 4 weeks at CodeClan we undertook our first project. Working independently we were to create a flask application that allows a user to perform simple CRUD actions. I decided to work to design a sports scoring tracker for Formula 1, following this brief.
 
@@ -10,6 +10,7 @@ there should be a way to display race results and see season results for a parti
 the app should display the current standings
 
 ### Extensions
+
 the user should be able to add race results
 all relevant information should update when a race result is submitted
 
