@@ -19,7 +19,7 @@ To run the app:
 flask run
 ```
 
-Then visit http://localhost:5000 to view the app. 
+Then visit http://127.0.0.1:5000/ to view the app. 
 
 Race results for the first race of the season have been seeded, more can be added in the race results pages.
 
